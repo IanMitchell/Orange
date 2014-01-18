@@ -10,4 +10,6 @@ class User < ActiveRecord::Base
     admin: 2
   }
 
+  has_many :posts
+
 end

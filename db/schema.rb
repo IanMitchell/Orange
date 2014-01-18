@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140118190407) do
+ActiveRecord::Schema.define(version: 20140118193120) do
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -21,8 +21,10 @@ ActiveRecord::Schema.define(version: 20140118190407) do
     t.datetime "updated_at"
     t.integer  "status",      default: 0
     t.integer  "user_id"
+    t.integer  "buyer_id"
   end
 
+  add_index "posts", ["buyer_id"], name: "index_posts_on_buyer_id"
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
   create_table "posts_tags", force: true do |t|
@@ -31,6 +33,20 @@ ActiveRecord::Schema.define(version: 20140118190407) do
   end
 
   add_index "posts_tags", ["post_id", "tag_id"], name: "index_posts_tags_on_post_id_and_tag_id", unique: true
+
+  create_table "reviews", force: true do |t|
+    t.integer  "post_id"
+    t.integer  "user_id"
+    t.integer  "owner_id"
+    t.string   "feedback"
+    t.integer  "score",      default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reviews", ["owner_id"], name: "index_reviews_on_owner_id"
+  add_index "reviews", ["post_id"], name: "index_reviews_on_post_id"
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
   create_table "tags", force: true do |t|
     t.string   "name"
@@ -52,6 +68,9 @@ ActiveRecord::Schema.define(version: 20140118190407) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "role",                   default: 0
+    t.string   "name"
+    t.string   "city"
+    t.string   "state"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

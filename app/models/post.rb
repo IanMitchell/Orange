@@ -11,6 +11,12 @@ class Post < ActiveRecord::Base
   }
 
 
+
+  validates :title,         presence: true
+
+  validates :description,   presence: true
+
+
   def can_post
     #TODO: Check for any completed posts without reviews
   end

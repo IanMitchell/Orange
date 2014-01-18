@@ -12,3 +12,9 @@ gem 'sdoc',          group: :doc, require: false
 gem 'spring',        group: :development
 
 gem 'devise', '>= 3.2'
+
+
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+end

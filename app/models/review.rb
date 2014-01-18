@@ -4,10 +4,10 @@ class Review < ActiveRecord::Base
   belongs_to :owner, class_name: 'user'
 
 
-  validates :feedback,    presence: true,
-                          length: { in: 3..256 }
+  validates :feedback,  presence: true,
+                        length: { in: 3..256 }
 
-  enum :score {
+  enum score: {
     neutral: 0,
     negative: -1,
     positive: 1

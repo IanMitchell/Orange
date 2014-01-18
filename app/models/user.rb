@@ -13,4 +13,29 @@ class User < ActiveRecord::Base
   has_many :posts
 
   validates :name,  presence: true
+
+
+  def can_post
+    if self.completed_transactions.last
+      if self.completed_transactions.last.reviews.count > 0
+        if self.completed_transactions.last.reviews.where(buyer: self)
+          true
+        else
+          false
+        end
+      else
+        false
+      end
+    else
+      true
+    end
+  end
+
+  def completed_posts
+    self.posts.completed
+  end
+
+  def completed_transactions
+    Post.where(buyer: self).completed
+  end
 end

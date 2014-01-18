@@ -2,7 +2,8 @@ class Post < ActiveRecord::Base
   has_and_belongs_to_many :tags
 
   belongs_to :user
-  belongs_to :buyer, class_name: 'user'
+  belongs_to :buyer, class_name: 'User'
+  has_many :reviews
 
   enum status: {
     open: 0,
@@ -17,7 +18,7 @@ class Post < ActiveRecord::Base
   validates :description,   presence: true
 
 
-  def can_post
-    #TODO: Check for any completed posts without reviews
-  end
+  scope :completed, -> {
+    where('status <> ?', STATUS[:completed])
+  }
 end

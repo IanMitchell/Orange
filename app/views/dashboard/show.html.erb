@@ -7,6 +7,7 @@
   	<%= csrf_meta_tags %>
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
 		<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic' rel='stylesheet' type='text/css'>
+
 	</head>
 	<body>
 		<div class="headerWrapper">
@@ -24,16 +25,18 @@
 							<div>Sign Out</div>
 						<% end %>
 					<% end %>
+					<div class="navLink"
 					<form action="" method="POST">
-					  <script
-					    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-					    data-key="pk_test_VA8Gg7GG9kMwVekeBFtgrPNC"
-					    data-amount="500"
-					    data-name="Karmik"
-					    data-description="Donate $5!"
-					    data-image="/64x64.png">
-					  </script>
-					</form>
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_VA8Gg7GG9kMwVekeBFtgrPNC"
+    data-amount="500"
+    data-name="Demo Site"
+    data-description="2 widgets ($20.00)"
+    data-image="http://placehold.it/128x128">
+  </script>
+</form>
+</div>
 				</div>
 			</div>
 		</div>
@@ -46,7 +49,7 @@
 			<div class="postFeed">
 				<h2 class="feedHead">Recent Posts in Your Community</h2>
 				<% @posts.each do |post| %>
-					<div class="post givePost">
+					<div class=<%= post.user ? "post takePost" : "post givePost" %>>
 						<img src=<%= get_gravatar(post.user ? post.user : post.buyer)%> class="feedProfilePic"/>
 						<div class="feedTextBox">
 							<h3 class="postTitle"><%= post.title %></h3>

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get "dashboard/show"
 
-  get "search/index"
+  get 'search' => 'search#index'
 
   resources :reviews
 

@@ -1,4 +1,6 @@
 class SearchController < ApplicationController
+  layout false
+
   def index
     if params[:query].present?
       @results = Array.new

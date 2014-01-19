@@ -14,7 +14,7 @@
 			<div class="header">
 				<%= image_tag 'karmic-logo.svg', class: 'logo' %>
 				<div class="navLinks">
-					<%= link_to search_index_path, class: 'navLink' do%>
+					<%= link_to search_path, class: 'navLink' do%>
 					<div>Search</div>
 					<% end %>
 					<%= link_to profile_path(current_user), class: 'navLink' do %>
@@ -72,11 +72,11 @@
 						<%= link_to new_post_path do%>
 						<li>New Post</li>
 						<% end %>
-						
+
 						<%= link_to edit_user_registration_path  do%>
 						<li>Edit Profile</li>
 						<% end %>
-						
+
 						<%= link_to search_index_path do%>
 						<li>Search</li>
 						<% end %>

@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Karmik</title>
+		<%= stylesheet_link_tag 'search.css' %>
 		<link rel="stylesheet" type="text/css" href="search.css"/>
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
 		<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic' rel='stylesheet' type='text/css'>
@@ -9,7 +10,7 @@
 	<body>
 		<div class="headerWrapper">
 			<div class="header">
-				<img src="karmic-logo.svg" class="logo"/>
+				<%= image_tag 'karmic-logo.svg', class: 'logo' %>
 				<div class="navLinks">
 					<a class="navLink" href="#"><div>Search</div></a>
 					<a class="navLink" href="#"><div>Welcome User!</div></a>
@@ -20,40 +21,41 @@
 		<div class="heroWrapper">
 			<div class="hero">
 				<h1>Search</h1>
-				<div class="heroSelect">
-					<select>
-					    <option value="volvo">I Need</option>
-					    <option value="saab">I Can Give</option>
-					</select>
-					<div class="dropArrow">
-						<i class="fa fa-caret-down"></i>
+				<%= @results.nil? ? "No Results" : @results.count %>
+				<%= form_tag do %>
+					<div class="heroSelect">
+						<select>
+						    <option value="need">I Need</option>
+						    <option value="give">I Can Give</option>
+						</select>
+						<div class="dropArrow">
+							<i class="fa fa-caret-down"></i>
+						</div>
 					</div>
-				</div>
-				<input type="text" placeholder="Search" class="searchBox"/>
-				<input type="submit" class="searchButton" value="Get Results"/>
+					<input type="text" placeholder="Search" name='query' value='<%= params[:query] %>' class="searchBox"/>
+					<input type="submit" class="searchButton" name='submit' value="Get Results"/>
+				<% end %>
+
 			</div>
 		</div>
 		<div class="dashboardWrapper">
 			<div class="feedWrapper">
 				<div class="feedBox">
 					<div class="postFeed">
-						<h2 class="feedHead">Results for <b>SEARCH_QUERY</b> in <b>San Luis Obispo, CA</b></h2>
-						<div class="post givePost">
-							<img src="http://placehold.it/150x150" class="feedProfilePic"/>
-							<div class="feedTextBox">
-								<h3 class="postTitle">Looking for someone to teach me about PHP</h3>
-								<p>Test test test test test test test test test test test test test test test test test.</p>
-								<a href="#"><div class="postButton">Connect</div></a><a href="#"><div class="viewButton">View Profile</div></a>
+						<h2 class="feedHead">Results for <b><%= params[:query] %></b> in <b>San Luis Obispo, CA</b></h2>
+
+						<% @results.each do |result| %>
+							<div class="post givePost">
+								<img src="http://placehold.it/150x150" class="feedProfilePic"/>
+								<div class="feedTextBox">
+									<h3 class="postTitle"><%= result.title %></h3>
+									<p><%= result.description %></p>
+									<a href="#"><div class="postButton">Connect</div></a><a href="#"><div class="viewButton">View Profile</div></a>
+								</div>
 							</div>
-						</div>
-						<div class="post takePost">
-							<img src="http://placehold.it/150x150" class="feedProfilePic"/>
-							<div class="feedTextBox">
-								<h3 class="postTitle">Looking for someone to teach me about PHP</h3>
-								<p>Test test test test test test test test test test test test test test test test test.</p>
-								<a href="#"><div class="postButton">Connect</div></a><a href="#"><div class="viewButton">View Profile</div></a>
-							</div>
-						</div>
+						<% end %>
+
+
 					</div>
 				</div>
 			</div>

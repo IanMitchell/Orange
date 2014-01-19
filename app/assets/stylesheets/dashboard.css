@@ -4,6 +4,10 @@ body{
 	min-width: 660px;
 }
 
+a:visited {
+	color: inherit;
+}
+
 .headerWrapper{
 	width: 100%;
 	padding: 0px;
@@ -162,7 +166,7 @@ a:link{
 	width: 130px;
 	text-align: center;
 	padding: 5px;
-	color: white;	
+	color: white;
 }
 
 .takePost .postButton{

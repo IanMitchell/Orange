@@ -21,7 +21,6 @@
 		<div class="heroWrapper">
 			<div class="hero">
 				<h1>Search</h1>
-				<%= @results.nil? ? "No Results" : @results.count %>
 				<%= form_tag do %>
 					<div class="heroSelect">
 						<select>
@@ -42,7 +41,8 @@
 			<div class="feedWrapper">
 				<div class="feedBox">
 					<div class="postFeed">
-						<h2 class="feedHead">Results for <b><%= params[:query] %></b> in <b>San Luis Obispo, CA</b></h2>
+						<h2 class="feedHead">
+							<%= @results.count unless @results.nil? %> Results for <b><%= params[:query] %></b> in <b>San Luis Obispo, CA</b></h2>
 
 						<% @results.each do |result| %>
 							<div class="post givePost">

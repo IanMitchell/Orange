@@ -77,7 +77,8 @@
 									<%= link_to post_path post do %>
 									<%= link_to post_connect_path post do %><div class="postButton">Connect</div><% end %>
 									<%= link_to profile_path(post.created_by) do %><div class="viewButton">View Profile</div><% end %>
-									<%= link_to edit_post_path post do %><div class="postButton">Edit Post</div><% end %><% end %>
+									<% if post.created_by == current_user %>
+										<%= link_to edit_post_path post do %><div class="postButton">Edit Post</div><% end %><% end %><% end %>
 								</div>
 							</div>
 						<% end %>

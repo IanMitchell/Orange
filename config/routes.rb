@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :reviews
 
+  get "posts/:id/connect" => 'posts#connect'
+
   resources :posts
 
   get "profiles/:id" => 'profiles#show', as: :profile

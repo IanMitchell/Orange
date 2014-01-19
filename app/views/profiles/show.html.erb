@@ -2,28 +2,37 @@
 <html>
 	<head>
 		<title>Karmik</title>
-		<link rel="stylesheet" type="text/css" href="profile.css"/>
-		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
+		<%= stylesheet_link_tag 'profile.css' %>
+				<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
 		<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
 		<div class="headerWrapper">
 			<div class="header">
-				<img src="karmic-logo.svg" class="logo"/>
+				<%= image_tag 'karmic-logo.svg', class: 'logo' %>
 				<div class="navLinks">
-					<a class="navLink" href="#"><div>Search</div></a>
-					<a class="navLink" href="#"><div>Welcome User!</div></a>
+					<%= link_to search_path, class: 'navLink' do%>
+						<div>Search</div>
+					<% end %>
+					<%= link_to profile_path(current_user), class: 'navLink' do %>
+             			<div><%= current_user.name %></div>
+          			<% end %>
+          			<% if user_signed_in? %>
+						<%= link_to destroy_user_session_path, method: :delete, class: 'navLink' do %>
+							<div>Sign Out</div>
+						<% end %>
+					<% end %>
 				</div>
 			</div>
 		</div>
-		<form>
+		<form>s
 		<div class="heroWrapper">
 			<div class="hero">
 				<div class="userHero">
-					<img src="http://placehold.it/150x150" class="pictureHero"/>
+					<img src=<%= get_gravatar(current_user)%> class="pictureHero"/>
 					<div class="namePlaceHero">
-						<h2 class="nameHero">Kristin McCarty</h2>
-						<h2 class="placeHero">San Luis Obispo, CA</h2>
+						<h2 class="nameHero"><%= @user.name %></h2>
+						<h2 class="placeHero"><%= @user.city %></h2>
 					</div>
 				</div>
 				<div class="statHero">
@@ -68,20 +77,23 @@
 				<div class="sidebar">
 					<div class="postFeed">
 						<h2 class="feedHead">Open Posts</h2>
-						<div class="post givePost">
-							<div class="feedTextBox">
-								<h3 class="postTitle">Looking for someone to teach me about PHP</h3>
-								<p>Test test test test test test test test test test test test test test test test test.</p>
-								<a href="#"><div class="postButton">Connect</div></a>
+						<% if @posts.empty? %>
+						<h2 class="feedHead"><i>No posts found. :'( </i></h2>
+						<% else %>
+						<h2 class="feedHead">Recent Posts in Your Community</h2>
+						<% @posts.each do |post| %>
+							<div class="post <%= post.created_by==post.user ? 'takePost' : 'givePost' %>">
+								<img src=<%= get_gravatar(post.created_by)%> class="feedProfilePic"/>
+								<div class="feedTextBox">
+									<h3 class="postTitle"><%= post.title %></h3>
+									<p><%= post.description %></p>
+									<%= link_to post_path post do %>
+										<%= link_to post_connect_path post do %><div class="postButton">Connect</div><% end %><%= link_to profile_path(post.created_by) do %><div class="viewButton">View Profile</div><% end %>
+									<% end %>
+								</div>
 							</div>
-						</div>
-						<div class="post takePost">
-							<div class="feedTextBox">
-								<h3 class="postTitle">Looking for someone to teach me about PHP</h3>
-								<p>Test test test test test test test test test test test test test test test test test.</p>
-								<a href="#"><div class="postButton">Connect</div></a>
-							</div>
-						</div>
+						<% end %>
+						<% end %>
 						<a href=""><div class="shoveToRight orange">View All ></div></a>
 					</div>
 				</div>

@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
+  respond_to :html, :js
+
   def index
-    @posts = Post.all
+    @posts = Post.all.order('created_at DESC')
   end
 
   def show
@@ -17,7 +19,17 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(params[:post])
+    @post.created_by = current_user
+
+    if params[:post]['give']
+      @post.user = current_user
+    else
+      @post.buyer = current_user
+    end
+
     @post.save
+
+    respond_with @post
   end
 
   def update
@@ -42,7 +54,7 @@ class PostsController < ApplicationController
     @post.status = :completed
 
     @post.save
-    
+
     redirect_to dashboard_path
   end
 end

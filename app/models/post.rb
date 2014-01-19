@@ -19,10 +19,18 @@ class Post < ActiveRecord::Base
   validates :description,   presence: true
 
 
-  attr_reader :tag_tokens
+  attr_reader :tag_tokens, :give
   attr_accessible :title, :description, :user, :tag_tokens
 
   def tag_tokens=(tokens)
     self.tag_ids = Tag.ids_from_tokens(tokens)
+  end
+
+  def give=(val)
+    if val == true
+      self.user = current_user
+    else
+      self.buyer = current_user
+    end
   end
 end

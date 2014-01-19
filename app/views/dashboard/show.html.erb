@@ -17,7 +17,7 @@
 					<div>Search</div>
 					<% end %>
 					<%= link_to profile_path(current_user), class: 'navLink' do %>
-             <div>Welcome <%= current_user.name %></div>
+             <div><%= current_user.name %></div>
           <% end %>
           <% if user_signed_in? %>
 						<%= link_to destroy_user_session_path, method: :delete, class: 'navLink' do %>

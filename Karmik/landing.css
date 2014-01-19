@@ -1,0 +1,148 @@
+html, body{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.heroWrapper{
+	width: 100%;
+	height: 100%;
+	min-height: 510px;
+	min-width: 800px;
+	background-color: #333333;
+	background-image: url(karmik-bkgd.gif);
+	background-position: center center;
+	background-size: cover;
+	position: relative;
+}
+
+.navbar{
+	width: 100%;
+	height: 72px;
+	box-sizing: border-box;
+	padding: 0px;
+	border-radius: 0px;
+	position: relative;
+	overflow: hidden;
+}
+
+.logoFont{
+	font-family: 'Gotham Black';
+	line-height: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20pt;
+	display: inline-block;
+	color: white;
+	letter-spacing: 8pt;
+	position: absolute;
+	left: 50px;
+	top: 37px;
+	text-shadow: -3px 2px 0px rgba(0,0,0,0.36);
+}
+
+.navLinks{
+	height: 100%;
+	position: absolute;
+	right: 0px;
+	font-family: Ubuntu;
+	color: white;
+	padding-right: 50px;
+}
+
+a:link{
+	text-decoration: inherit;
+	color: inherit;
+}
+
+.navLink{
+	display: inline-block;
+}
+
+.navLink > div{
+	height: 100%;
+	padding: 24px;
+	text-align: center;
+	font-weight: 200;
+	font-size: 16pt;
+	color: white;
+}
+
+.navLink:hover > div{
+	background-color: #934124;
+}
+
+
+.hero{
+	width: 750px;
+	height: 300px;
+	box-sizing: border-box;
+	font-family: Ubuntu;
+	color: white;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -375px;
+	margin-top: -200px;
+}
+
+.hero h1{
+	font-weight: 300;
+	font-size: 50pt;
+	margin-bottom: 30px;
+}
+
+.heroSign{
+	padding: 20px;
+	display: inline-block;
+	background-color: #43ABCE;
+	font-size: 16pt;
+	font-weight: 200;
+}
+
+.heroSign:hover{
+	background-color: white;
+	color: #333333;
+}
+
+.heroMore{
+	padding: 20px;
+	display: inline-block;
+	font-weight: 200;
+	font-size: 16pt;
+}
+
+.heroMore > a{
+	color: #43ABCE;
+}
+
+.heroMore > a:hover{
+	color: white;
+}
+
+.contentWrapper{
+	width: 100%;
+	box-sizing: border-box;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.contentBox{
+	width: 100%;
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	box-sizing: border-box;
+	padding: 20px;
+	font-family: Ubuntu;
+}
+
+.landingBox h1{
+	text-align: center;
+	font-weight: 400;
+}
+
+.landingBox p{
+	text-align: justify;
+}

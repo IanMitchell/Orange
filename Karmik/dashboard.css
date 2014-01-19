@@ -1,0 +1,247 @@
+body{
+	margin: 0px;
+	padding: 0px;
+	min-width: 660px;
+}
+
+.headerWrapper{
+	width: 100%;
+	padding: 0px;
+	box-sizing: border-box;
+	min-width: 660px;
+}
+
+.header{
+	width: 100%;
+	height: 72px;
+	background-color: #F05323;
+	box-sizing: border-box;
+	padding: 0px;
+	border-radius: 0px;
+	position: relative;
+	overflow: hidden;
+}
+
+.logo{
+	width: 176px;
+	position: absolute;
+	left: 40px;
+	top: 22px;
+}
+
+.navLinks{
+	height: 100%;
+	position: absolute;
+	right: 0px;
+	font-family: Ubuntu;
+	color: white;
+	padding-right: 50px;
+}
+
+a:link{
+	text-decoration: inherit;
+	color: inherit;
+}
+
+.navLink{
+	display: inline-block;
+}
+
+.navLink > div{
+	height: 100%;
+	padding: 24px;
+	text-align: center;
+	font-weight: 200;
+	font-size: 16pt;
+	color: white;
+}
+
+.navLink:hover > div{
+	background-color: #934124;
+}
+
+.heroWrapper{
+	width: 100%;
+	box-sizing: border-box;
+	padding-left: 50px;
+	padding-right: 50px;
+	background-color: #EBEBEB;
+}
+
+.hero{
+	width: 100%;
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	box-sizing: border-box;
+	font-family: Ubuntu;
+	color: #333333;
+	padding: 20px;
+}
+
+.dashboardWrapper{
+	width: 100%;
+	max-width: 1000px;
+	min-height: 566px;
+	padding-right: 300px;
+	box-sizing: border-box;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: Ubuntu;
+}
+
+.postFeed{
+	width: 100%;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.feedProfilePic{
+	display: inline-block;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+.post{
+	width: 100%;
+	position: relative;
+	box-sizing: border-box;
+	padding-left: 150px;
+	border: 1px solid #d9d9d9;
+	margin-bottom: 10px;
+}
+
+.feedTextBox{
+	width: 100%;
+	min-height: 150px;
+	display: inline-block;
+	box-sizing: border-box;
+	border-right: 20px solid black;
+	padding: 20px;
+}
+
+.feedTextBox p{
+	margin-bottom: 15px;
+	margin-top: 10px;
+	font-weight: 300;
+	font-size: 12pt;
+	line-height: 1.3;
+}
+
+.takePost > .feedTextBox{
+	border-color: #52BAD4;
+}
+
+.givePost > .feedTextBox{
+	border-color: #68BA56;
+}
+
+.takePost .postTitle:before{
+	color: #52BAD4;
+	content: 'TAKE: ';
+}
+
+.givePost .postTitle:before{
+	color: #68BA56;
+	content: 'GIVE: ';
+}
+
+.postTitle{
+	font-weight: 500;
+	padding: 0px;
+	margin: 0px;
+	line-height: 1;
+	padding-top: 2px;
+	font-size: 12pt;
+}
+
+.postButton{
+	background-color: grey;
+	width: 130px;
+	text-align: center;
+	padding: 5px;
+	color: white;	
+}
+
+.takePost .postButton{
+	background-color: #4DBAD1;
+}
+
+.givePost .postButton{
+	background-color: #68BA56;
+}
+
+.postButton:hover{
+	background-color: #333333;
+}
+
+.sidebar{
+	width: 300px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	box-sizing: border-box;
+	padding: 20px;
+	padding-top: 5px;
+}
+
+.sidebar h1{
+	font-weight: 300;
+	padding-top: 20px;
+	font-size: 16pt;
+	margin-left: 10px;
+}
+
+.sidebar ul{
+	padding-left: 0px;
+}
+
+.sidebar li {
+    list-style-type: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 300;
+}
+
+.sidebar li:hover{
+	background-color: #EBEBEB;
+}
+
+li.listHeader{
+	font-weight: 500;
+}
+
+.sidebar li.listHeader:hover{
+	background-color: rgba(255,255,255,0);
+}
+
+.sidebar a {
+	color: black !important;
+}
+
+.feedHead{
+	padding: 0px;
+	margin: 0px;
+	padding-top: 30px;
+	padding-bottom: 20px;
+	font-weight: 300;
+	color: #333333;
+}
+
+footer{
+	background-color: #333333;
+	width: 100%;
+	min-height: 100px;
+	box-sizing: border-box;
+	font-family: Ubuntu;
+	padding: 20px;
+	padding-left: 50px;
+	color: rgba(255,255,255,0.5);
+	font-weight: 300;
+}
+
+footer *{
+	font-weight: 300;
+}

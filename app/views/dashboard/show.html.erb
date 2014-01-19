@@ -54,7 +54,7 @@
 						<% else %>
 						<h2 class="feedHead">Recent Posts in Your Community</h2>
 						<% @posts.each do |post| %>
-							<div class="post <%= post.created_by=post.user ? 'takePost' : 'givePost' %>">
+							<div class="post <%= post.created_by==post.user ? 'takePost' : 'givePost' %>">
 								<img src=<%= get_gravatar(post.created_by)%> class="feedProfilePic"/>
 								<div class="feedTextBox">
 									<h3 class="postTitle"><%= post.title %></h3>

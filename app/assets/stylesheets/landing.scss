@@ -14,6 +14,8 @@ html, body{
 	background-image: image_url("karmik-bkgd.jpg");
 	background-position: center center;
 	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: repeat;
 	position: relative;
 }
 
@@ -109,7 +111,7 @@ a:link{
 	color: #E1653A;
 }
 
-.heroMore > a:hover{
+.heroMore > a:hover, .heroSign{
 	color: white;
 }
 
@@ -149,6 +151,9 @@ a:link{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+	width: 100%;
+	max-width: 709px;
+	max-height: 211px;
 }
 
 footer{
@@ -165,6 +170,11 @@ footer{
 
 .orange{
 	background-color: #E1653A;
+}
+
+.small > div{
+	max-width: 700px;
+	text-align: left;
 }
 
 footer *{

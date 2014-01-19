@@ -1,0 +1,477 @@
+html, body {
+    height: 100%;
+}
+
+body{
+	margin: 0px;
+	padding: 0px;
+	min-width: 1000px;
+}
+
+.headerWrapper{
+	width: 100%;
+	padding: 0px;
+	box-sizing: border-box;
+	min-width: 660px;
+}
+
+.header{
+	width: 100%;
+	height: 72px;
+	background-color: #F05323;
+	box-sizing: border-box;
+	padding: 0px;
+	border-radius: 0px;
+	position: relative;
+	overflow: hidden;
+}
+
+.logo{
+	width: 176px;
+	position: absolute;
+	left: 40px;
+	top: 22px;
+}
+
+.navLinks{
+	height: 100%;
+	position: absolute;
+	right: 0px;
+	font-family: Ubuntu;
+	color: white;
+	padding-right: 50px;
+}
+
+a:link{
+	text-decoration: inherit;
+	color: inherit;
+}
+
+.navLink{
+	display: inline-block;
+}
+
+.navLink > div{
+	height: 100%;
+	padding: 24px;
+	text-align: center;
+	font-weight: 200;
+	font-size: 16pt;
+	color: white;
+}
+
+.navLink:hover > div{
+	background-color: #934124;
+}
+
+.heroWrapper{
+	width: 100%;
+	box-sizing: border-box;
+	padding-left: 50px;
+	padding-right: 50px;
+	background-color: #EBEBEB;
+}
+
+.hero{
+	width: 100%;
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	box-sizing: border-box;
+	font-family: Ubuntu;
+	color: #333333;
+	padding: 20px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.userHero{
+	width: 450px;
+	margin: 0px;
+}
+
+.pictureHero{
+	border-radius: 150px;
+	display: inline-block;
+}
+
+.namePlaceHero{
+	display: inline-block;
+	position: relative;
+	top: -50px;
+	margin-left: 30px;
+}
+
+h2.nameHero{
+	font-weight: 500;
+	margin: 0px;
+	padding: 0px;
+	line-height: 1;
+	margin-bottom: 15px;
+}
+
+h2.placeHero{
+	font-weight: 300;
+	margin: 0px;
+	padding: 0px;
+	line-height: 1;
+}
+
+.dashboardWrapper{
+	max-width: 1000px;
+	box-sizing: border-box;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: Ubuntu;
+}
+
+.feedWrapper{
+	width: 100%;
+	float: right;
+	margin-bottom: 40px;
+}
+
+.feedBox{
+	margin-right: 300px;
+}
+
+.feedBox h3{
+	font-weight: 500;
+	margin-top: 50px;
+}
+
+.feedBox p{
+	font-weight: 200;
+}
+
+.postFeed{
+	width: 100%;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.feedProfilePic{
+	display: inline-block;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	border-radius: 200px;
+	overflow: hidden;
+	width: 110px;
+	height: 110px;
+	margin: 20px;
+}
+
+.post{
+	width: 100%;
+	position: relative;
+	box-sizing: border-box;
+	border: 1px solid #d9d9d9;
+	margin-bottom: 10px;
+}
+
+.feedTextBox{
+	width: 100%;
+	min-height: 150px;
+	display: inline-block;
+	box-sizing: border-box;
+	border-right: 20px solid black;
+	padding: 20px;
+}
+
+.feedTextBox p{
+	margin-bottom: 15px;
+	margin-top: 10px;
+	font-weight: 300;
+	font-size: 12pt;
+	line-height: 1.3;
+}
+
+.takePost > .feedTextBox{
+	border-color: #52BAD4;
+}
+
+.givePost > .feedTextBox{
+	border-color: #68BA56;
+}
+
+.takePost .postTitle:before{
+	color: #52BAD4;
+	content: 'TAKE: ';
+}
+
+.givePost .postTitle:before{
+	color: #68BA56;
+	content: 'GIVE: ';
+}
+
+.postTitle{
+	font-weight: 500;
+	padding: 0px;
+	margin: 0px;
+	line-height: 1;
+	padding-top: 2px;
+	font-size: 12pt;
+}
+
+.postButton{
+	background-color: grey;
+	width: 90px;
+	text-align: center;
+	padding: 5px;
+	color: white;
+	display: inline-block;	
+	margin-right: 10px;
+}
+
+.viewButton{
+	background-color: grey;
+	width: 120px;
+	text-align: center;
+	padding: 5px;
+	color: white;
+	display: inline-block;
+}
+
+.viewButton:hover{
+	background-color: #333333;
+}
+
+.takePost .postButton{
+	background-color: #4DBAD1;
+}
+
+.givePost .postButton{
+	background-color: #68BA56;
+}
+
+.postButton:hover{
+	background-color: #333333;
+}
+
+.sidebarWrapper{
+	float: right;
+	width: 300px; /*Width of right column*/
+	margin-right: -100%;
+}
+
+.sidebar{
+	width: 100%;
+	box-sizing: border-box;
+	padding: 20px;
+	padding-top: 5px;
+}
+
+.sidebar h1{
+	font-weight: 300;
+	padding-top: 20px;
+	font-size: 16pt;
+	margin-left: 10px;
+}
+
+.sidebar ul{
+	padding-left: 0px;
+}
+
+.sidebar li {
+    list-style-type: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 300;
+}
+
+li.listHeader{
+	font-weight: 500;
+}
+
+.sidebar li.listHeader:hover{
+	background-color: rgba(255,255,255,0);
+}
+
+.sidebar a {
+	color: black !important;
+}
+
+.feedHead{
+	padding: 0px;
+	margin: 0px;
+	padding-top: 30px;
+	padding-bottom: 20px;
+	font-weight: 300;
+	color: #333333;
+}
+
+footer{
+	background-color: #333333;
+	width: 100%;
+	height: 100px;
+	box-sizing: border-box;
+	font-family: Ubuntu;
+	padding: 20px;
+	padding-left: 50px;
+	color: rgba(255,255,255,0.5);
+	font-weight: 300;
+	clear: right;
+	overflow: visible;
+}
+
+footer *{
+	font-weight: 300;
+}
+
+.heroSelect {
+	border: 1px solid #ccc;
+	position: relative;
+	margin-left: 40px;
+	margin-right: 5px;
+	top: -4px;
+}
+
+.hero select {
+	padding: 10px;
+	padding-right: 40px;
+	font-size: 16px;
+	line-height: 1;
+	border: 0;
+	border-radius: 0;
+	-webkit-appearance: none;
+	font-size: 16pt;
+	font-weight: 300;
+	font-family: Ubuntu;
+	margin: 0px;
+}
+
+.dropArrow{
+	position: absolute;
+	top: 12px;
+	right: 15px;
+	pointer-events: none;
+}
+
+.hero .searchBox{
+	height: 43px;
+	box-sizing: border-box;
+	font-size: 16pt;
+	font-weight: 300;
+	font-family: Ubuntu;
+	padding-left: 15px;
+	padding-right: 15px;
+	border: 1px solid #ccc;
+	position: relative;
+	top: -4px;
+}
+
+.searchButton{
+	height: 42px;
+	box-sizing: border-box;
+	font-size: 16pt;
+	font-weight: 300;
+	font-family: Ubuntu;
+	padding-left: 15px;
+	padding-right: 15px;
+	border: none;
+	position: relative;
+	top: -4px;
+	background-color: #4DBAD0;
+	color: white;
+}
+
+.searchCheckbox{
+	position: relative;
+	top: -2px;
+	margin-right: 10px;
+}
+
+.orange{
+	color: #F05323 !important;
+}
+
+.shoveToRight{
+	margin-left: 138px;
+	margin-top: 20px;
+}
+
+li.orange{
+	margin-left: 50px;
+	padding: 0px;
+}
+
+.reviewBox{
+	width: 100%;
+	padding: 0px;
+	padding-left: 140px;
+	box-sizing: border-box;
+	position: relative;
+	margin-bottom: 50px;
+}
+
+.reviewLeft{
+	position: absolute;
+	left: 0px;
+}
+
+.reviewPicture{
+	display: inline-block;
+	margin: 0px;
+	border-radius: 70px;
+	overflow: hidden;
+}
+
+.reviewRating{
+	width: 70px;
+	height: 70px;
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	font-size: 30pt;
+	margin-left: -4px;
+	line-height: 0;
+	position: relative;
+	top: -56px;
+	box-sizing: border-box;
+	padding-top: 20px;
+}
+
+.reviewRating i{
+	line-height: 0;
+	padding: 0px;
+	margin: 0px;
+	position: relative;
+	top: 35px;
+	color: #333333;
+}
+
+.reviewBox p{
+	margin: 0px;
+}
+
+.reviewName{
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	top: -20px;
+}
+
+.reviewPlace{
+	margin: 0;
+	padding: 0;
+	position: relative;
+	top: -15px;
+}
+
+.reviewRight{
+	padding: 20px;
+	width: 100%;
+	box-sizing: border-box;
+	text-align: justify;
+	padding-top: 0px;
+	padding-bottom: 5px;
+}
+
+.feedBox hr{
+	border: none;
+	border-bottom: 1px solid #EBEBEB;
+	margin-bottom: 40px;
+}

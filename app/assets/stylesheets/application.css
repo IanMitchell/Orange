@@ -104,7 +104,7 @@ body *{
 	background-color: rgba(255,255,255,1.0);
 }
 
-.modal > .modalBox > .boxBody > button{
+.modal > .modalBox > .boxBody > input[type='submit']{
 	width: 100%;
 	margin-top: 20px;
 	border-radius: 5px;
@@ -116,7 +116,7 @@ body *{
 	border: none;
 }
 
-.modal > .modalBox > .boxBody > button:hover{
+.modal > .modalBox > .boxBody > input[type='submit']:hover{
 	background-color: white;
 	cursor: pointer;
 	color: black;

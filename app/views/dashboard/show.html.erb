@@ -12,7 +12,9 @@
 	<body>
 		<div class="headerWrapper">
 			<div class="header">
+				<%= link_to dashboard_path do %>
 				<%= image_tag 'karmic-logo.svg', class: 'logo' %>
+				<% end %>
 				<div class="navLinks">
 					<%= link_to search_path, class: 'navLink' do%>
 						<div>Search</div>
@@ -26,15 +28,28 @@
 						<% end %>
 					<% end %>
 					<div class="navLink"
-					<form action="" method="POST">
-  <script
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="pk_test_VA8Gg7GG9kMwVekeBFtgrPNC"
-    data-amount="500"
-    data-name="Karmik"
-    data-description="Activate Premium"
-    data-image="http://placehold.it/128x128">
-  </script>
+					<script src="https://checkout.stripe.com/checkout.js"></script>
+
+  <button id="customButton">Go Premium</button>
+  <script>
+  var handler = StripeCheckout.configure({
+    key: 'pk_test_VA8Gg7GG9kMwVekeBFtgrPNC',
+    image: 'http://placehold.it/128x128',
+    token: function(token, args) {
+      // Use the token to create the charge with a server-side script.
+    }
+  });
+
+  document.getElementById('customButton').addEventListener('click', function(e) {
+    // Open Checkout with further options
+    handler.open({
+      name: 'Karmik',
+      description: 'Activate Premiu',
+      amount: 500
+    });
+    e.preventDefault();
+  });
+</script>
 </form>
 </div>
 				</div>

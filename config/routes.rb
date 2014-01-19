@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get "profiles/:id" => 'profiles#show', as: :profile
 
   devise_for :users
+  get 'home' => 'home#index', as: :after_sign_out_path_for
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

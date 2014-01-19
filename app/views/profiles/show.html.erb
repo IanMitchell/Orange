@@ -29,10 +29,15 @@
 		<div class="heroWrapper">
 			<div class="hero">
 				<div class="userHero">
-					<img src=<%= get_gravatar(current_user)%> class="pictureHero"/>
+					<img src=<%= get_gravatar(@user)%> class="pictureHero"/>
 					<div class="namePlaceHero">
 						<h2 class="nameHero"><%= @user.name %></h2>
-						<h2 class="placeHero"><%= @user.city %></h2>
+						<h2 class="placeHero"><% unless @user.city.nil? %>
+<%= @user.city %>
+<% end %>
+<% unless @user.state.nil? %>, 
+<%= @user.state %>
+<% end %></h2>
 					</div>
 				</div>
 				<div class="statHero">

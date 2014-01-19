@@ -12,7 +12,10 @@
 			<div class="navbar">
 				<%= image_tag 'karmic-logo.svg', class: 'logo' %>
 				<div class="navLinks">
-					<a class="navLink" href="#"><div>Sign Up</div></a>
+					
+					<%= link_to  new_user_registration_path, class: 'navLink' do %>
+<div>Sign Up</div>
+<% end %>
 					<a class="navLink" href="#"><div>Log In</div></a>
 				</div>
 			</div>

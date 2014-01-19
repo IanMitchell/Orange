@@ -126,33 +126,3 @@ body *{
 	display: block;
 }
 
-.navLinks{
-	height: 100%;
-	position: absolute;
-	right: 0px;
-	font-family: Ubuntu;
-	color: white;
-	padding-right: 50px;
-}
-
-a:link{
-	text-decoration: inherit;
-	color: inherit;
-}
-
-.navLink{
-	display: inline-block;
-}
-
-.navLink > div{
-	height: 100%;
-	padding: 24px;
-	text-align: center;
-	font-weight: 200;
-	font-size: 16pt;
-	color: white;
-}
-
-.navLink:hover > div{
-	background-color: #934124;
-}

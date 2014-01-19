@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :buyer, class_name: 'User'
+  belongs_to :created_by, class_name: 'User'
   has_many :reviews
 
   enum status: {

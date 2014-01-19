@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
-  layout: false
+  layout false
 
   def show
   	@posts =Post.all

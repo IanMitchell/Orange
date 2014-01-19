@@ -36,14 +36,14 @@
 						<h2 class="placeHero"><% unless @user.city.nil? %>
 <%= @user.city %>
 <% end %>
-<% unless @user.state.nil? %>, 
+<% unless @user.state.nil? %>,
 <%= @user.state %>
 <% end %></h2>
 					</div>
 				</div>
 				<div class="statHero">
 					<div class="gameHero">
-						<img src="badges.jpg"/>
+						<%= image_tag 'badges.jpg' %>
 					</div>
 					<div class="ratioHero">
 						<div class="giveBox"><h1>18</h1><p>TIMES GIVEN</p></div>

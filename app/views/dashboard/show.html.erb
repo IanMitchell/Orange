@@ -57,7 +57,11 @@
 									<h3 class="postTitle"><%= post.title %></h3>
 									<p><%= post.description %></p>
 									<%= link_to post_path post do %>
-										<a href="#"><div class="postButton">Connect</div></a><a href="#"><div class="viewButton">View Profile</div></a>
+										<a href="#"><div class="postButton">Connect</div></a>
+
+					<%= link_to profile_path(post.user ? post.user : post.buyer), class: 'viewButton' do %>
+             <div>View Profile</div>
+          <% end %>
 									<% end %>
 								</div>
 							</div>
@@ -75,8 +79,7 @@
 						
 						<%= link_to edit_user_registration_path  do%>
 						<li>Edit Profile</li>
-						<% end %>
-						
+						<% end %>	
 						<%= link_to search_index_path do%>
 						<li>Search</li>
 						<% end %>

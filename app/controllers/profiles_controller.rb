@@ -3,6 +3,6 @@ class ProfilesController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = Post.where(created_by: current_User)
+    @posts = Post.where(created_by: @user)
   end
 end

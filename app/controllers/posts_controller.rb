@@ -35,6 +35,8 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update_attributes(params[:post])
+
+    respond_with @post
   end
 
   def destroy

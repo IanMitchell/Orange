@@ -79,8 +79,8 @@
 									<%= link_to post_connect_path post do %><div class="postButton">Connect</div><% end %>
 									<%= link_to profile_path(post.created_by) do %><div class="viewButton2">View Profile</div><% end %>
 									<% if post.created_by == current_user %>
-										<%= link_to edit_post_path post do %><div class="postButton3">Edit</div><% end %>
-										<%= link_to destroy_post_path post, :confirm => 'Are you sure you want to delete?', :method => :delete do %><div class="postButton4">Delete</div><% end %>
+										<%= link_to edit_post_path post do %><div class="viewButton3">Edit</div><% end %>
+										<%= link_to destroy_post_path post, :confirm => 'Are you sure you want to delete?', :method => :delete do %><div class="viewButton4">Delete</div><% end %>
 										<% end %><% end %>
 								</div>
 							</div>

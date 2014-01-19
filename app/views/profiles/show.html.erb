@@ -1,34 +1,47 @@
 <h1>Profile</h1>
 <br>
 <h2>About</h2>
+
+<%= @user.name %>
+<br>
+<%= @user.email %>
+<br>
+
+<% unless @user.city.nil? %>
+<%= @user.city %> <br>
+<% end %>
+<% unless @user.state.nil? %>
+<%= @user.state %> <br>
+<% end %>
+<br>
+<% unless @user.website.nil? %>
+<%= @user.website %> <br>
+<% end %>
+
+<% unless @user.twitter.nil? %>
+<%= @user.twitter %> <br>
+<% end %>
+
+<% unless @user.facebook.nil? %>
+<%= @user.facebook %> <br>
+<% end %>
+<% unless @user.phone.nil? %>
+<%= @user.phone %> <br>
+<% end %>
 <br>
 <h2>Needs</h2>
 <br>
 <h2>Service</h2>
 <br>
 <h2>Reviews</h2>
-<p>Find me in app/views/profiles/show.html.erb</p>
-<%= @user.name %>
-<br>
-<%= @user.email %>
-<br>
-<%= @user.city %>
-<br>
-<%= @user.state %>
-<br>
-<%= @user.website %>
-<br>
-<%= @user.twitter %>
-<br>
-<%= @user.facebook %>
-<br>
-<%= @user.phone %>
-<br>
-<%= @user.updated_at %>
-<br>
-<%= @user.role %>
-<br>
+<!--<p>Find me in app/views/profiles/show.html.erb</p>-->
+<% unless @user.updated_at.nil? %>
+<%= @user.updated_at %> <br>
+<% end %>
+
+<% unless @user.role.nil? %>
+<%= @user.role%> <br>
+<% end %>
 <% @user.reviews.each do |review| %>
   <%= review.feedback %>
 <% end %>
-<br>

@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  layout nil
+  layout false
 
   def index
   	if user_signed_in?

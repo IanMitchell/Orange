@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :reviews
 
-  get "posts/:id/connect" => 'posts#connect'
+  get "posts/:id/connect" => 'posts#connect', as: :post_connect
 
   resources :posts
 

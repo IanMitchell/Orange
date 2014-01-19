@@ -15,7 +15,10 @@
 					<%= link_to profile_path(current_user), class: 'navLink' do %>
                                           <div>Welcome <%= current_user.name %></div>
                                         <% end %>
-				</div>
+                                        <% if user_signed_in? %>
+					<%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'navLink' %>
+<% end %>				
+</div>
 			</div>
 		</div>
 		<div class="heroWrapper">

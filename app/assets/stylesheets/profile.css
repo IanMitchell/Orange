@@ -88,6 +88,8 @@ a:link{
 .userHero{
 	width: 450px;
 	margin: 0px;
+	padding: 0px;
+	display: inline-block;
 }
 
 .pictureHero{
@@ -115,6 +117,88 @@ h2.placeHero{
 	margin: 0px;
 	padding: 0px;
 	line-height: 1;
+}
+
+.statHero{
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+	width: 522px;
+	position: relative;
+	top: -35px;
+	margin-bottom: -35px;
+}
+
+.gameHero{
+	display: inline-block;
+	padding: 0px;
+	margin: 0px;
+	margin-right: 10px;
+}
+
+.gameHero img{
+	width: 200px;
+	position: relative;
+	top: 6px;
+}
+
+.ratioHero{
+	display: inline-block;
+	margin: 0px;
+}
+
+.giveBox{
+	background-color: white;
+	padding: 0px;
+	text-align: center;
+	padding: 10px;
+	padding-left: 0px;
+	padding-right: 0px;
+	width: 150px;
+	border: 1px solid #d9d9d9;
+	display: inline-block;
+}
+
+.giveBox h1{
+	font-size: 50pt;
+	font-weight: 500;
+	line-height: 1;
+	margin: 0px;
+	color: #67BA56;
+}
+
+.giveBox p{
+	color: #333333;
+	font-weight: 500;
+	line-height: 1;
+	margin: 10px;
+}
+
+.receiveBox{
+	background-color: white;
+	padding: 0px;
+	text-align: center;
+	padding: 10px;
+	padding-left: 0px;
+	padding-right: 0px;
+	width: 150px;
+	border: 1px solid #d9d9d9;
+	display: inline-block;
+}
+
+.receiveBox h1{
+	font-size: 50pt;
+	font-weight: 500;
+	line-height: 1;
+	margin: 0px;
+	color: #4DBAD1;
+}
+
+.receiveBox p{
+	color: #333333;
+	font-weight: 500;
+	line-height: 1;
+	margin: 10px;
 }
 
 .dashboardWrapper{

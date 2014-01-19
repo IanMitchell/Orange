@@ -25,7 +25,7 @@
 				</div>
 			</div>
 		</div>
-		<form>s
+		<form>
 		<div class="heroWrapper">
 			<div class="hero">
 				<div class="userHero">
@@ -83,12 +83,11 @@
 						<h2 class="feedHead">Recent Posts in Your Community</h2>
 						<% @posts.each do |post| %>
 							<div class="post <%= post.created_by==post.user ? 'takePost' : 'givePost' %>">
-								<img src=<%= get_gravatar(post.created_by)%> class="feedProfilePic"/>
 								<div class="feedTextBox">
 									<h3 class="postTitle"><%= post.title %></h3>
 									<p><%= post.description %></p>
 									<%= link_to post_path post do %>
-										<%= link_to post_connect_path post do %><div class="postButton">Connect</div><% end %><%= link_to profile_path(post.created_by) do %><div class="viewButton">View Profile</div><% end %>
+										<%= link_to post_connect_path post do %><div class="postButton">Connect</div><% end %>
 									<% end %>
 								</div>
 							</div>

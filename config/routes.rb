@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get "posts/:id/connect" => 'posts#connect', as: :post_connect
 
   resources :posts
-
+  delete "posts/:id" => 'posts#destroy', as: :destroy_post
   get "profiles/:id" => 'profiles#show', as: :profile
 
   devise_for :users

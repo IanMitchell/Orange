@@ -33,13 +33,13 @@ class PostsController < ApplicationController
   def connect
     @post = Post.find(params[:id])
 
-    if @post.user 
+    if @post.user
       @post.buyer=current_user
     else
       @post.user=current_user
     end
 
-    @post.staus= :completed
+    @post.status = :completed
 
     redirect_to dashboard_show_path
   end

@@ -3,9 +3,11 @@ class DashboardController < ApplicationController
 
   def show
     if params[:filter] == "open"
-      @posts = Post.open
+      @posts = current_user.posts.open
     elsif params[:filter] == "completed"
-      @posts = Post.completed
+      @posts = current_user.posts.completed
+    elsif params[:filter] == "all"
+      @posts = current_user.posts
     else
       @posts = Post.all
     end

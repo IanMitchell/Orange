@@ -83,6 +83,9 @@
 					</ul>
 					<ul>
 						<li class="listHeader">Your Posts</li>
+						<%= link_to dashboard_path do %>
+							<li>All Posts</li>
+						<% end %>
 						<%= link_to dashboard_path + '/open' do %>
 							<li>Open Posts</li>
 						<% end %>

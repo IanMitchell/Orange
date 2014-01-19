@@ -51,13 +51,13 @@
 					<div class="postFeed">
 						<h2 class="feedHead">Recent Posts in Your Community</h2>
 						<% @posts.each do |post| %>
-							<div class="post <%= post.user ? 'takePost' : 'givePost' %>">
-								<img src=<%= get_gravatar(post.user ? post.user : post.buyer)%> class="feedProfilePic"/>
+							<div class="post <%= post.created_by=post.user ? 'takePost' : 'givePost' %>">
+								<img src=<%= get_gravatar(post.created_by)%> class="feedProfilePic"/>
 								<div class="feedTextBox">
 									<h3 class="postTitle"><%= post.title %></h3>
 									<p><%= post.description %></p>
 									<%= link_to post_path post do %>
-										<%= link_to post_connect_path post do %><div class="postButton">Connect</div><% end %><div class="viewButton">View Profile</div></a>
+										<%= link_to post_connect_path post do %><div class="postButton">Connect</div><% end %><%= link_to profile_path(post.created_by)<div class="viewButton">View Profile</div><% end %>
 									<% end %>
 								</div>
 							</div>

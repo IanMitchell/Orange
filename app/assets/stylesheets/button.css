@@ -1,0 +1,9 @@
+#customButton {
+	border: none;
+	background-color: #8B482C;
+	color: white;
+	padding: 10px;
+	font-size: 14pt;
+	margin-left: 10px;
+	margin-right: 10px;
+}

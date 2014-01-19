@@ -57,7 +57,7 @@
 									<h3 class="postTitle"><%= post.title %></h3>
 									<p><%= post.description %></p>
 									<%= link_to post_path post do %>
-										<%= link_to post_connect_path do %><div class="postButton">Connect</div><% end %><div class="viewButton">View Profile</div></a>
+										<%= link_to post_connect_path post do %><div class="postButton">Connect</div><% end %><div class="viewButton">View Profile</div></a>
 									<% end %>
 								</div>
 							</div>

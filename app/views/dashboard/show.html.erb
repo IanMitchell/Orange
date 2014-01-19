@@ -46,24 +46,12 @@
 			</div>
 		</div>
 		<div class="dashboardWrapper">
-			<div class="postFeed">
-				<h2 class="feedHead">Recent Posts in Your Community</h2>
-				<% @posts.each do |post| %>
-					<div class="post <%= post.user ? 'takePost' : 'givePost' %>">
-						<img src=<%= get_gravatar(post.user ? post.user : post.buyer)%> class="feedProfilePic"/>
-						<div class="feedTextBox">
-							<h3 class="postTitle"><%= post.title %></h3>
-							<p><%= post.description %></p>
-							<%= link_to post_path post do %>
-								<div class="postButton">View Full Post</div>
-							<% end %>
-						</div>
 			<div class="feedWrapper">
 				<div class="feedBox">
 					<div class="postFeed">
 						<h2 class="feedHead">Recent Posts in Your Community</h2>
 						<% @posts.each do |post| %>
-							<div class=<%= post.user ? "post takePost" : "post givePost" %>>
+							<div class="post <%= post.user ? 'takePost' : 'givePost' %>">
 								<img src=<%= get_gravatar(post.user ? post.user : post.buyer)%> class="feedProfilePic"/>
 								<div class="feedTextBox">
 									<h3 class="postTitle"><%= post.title %></h3>

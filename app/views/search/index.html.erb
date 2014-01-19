@@ -54,12 +54,14 @@
 							<%= @results.count unless @results.nil? %> Results for <b><%= params[:query] %></b> in <b>San Luis Obispo, CA</b></h2>
 
 						<% @results.each do |result| %>
-							<div class="post givePost">
-								<img src="<%= get_gravatar(result.post.created_by,110) %>" class="feedProfilePic"/>
+							<div class="post <%= result.created_by==result.user ? 'takePost' : 'givePost' %>">
+								<img src="<%= get_gravatar(result.created_by,110) %>" class="feedProfilePic"/>
 								<div class="feedTextBox">
 									<h3 class="postTitle"><%= result.title %></h3>
 									<p><%= result.description %></p>
-									<a href="#"><div class="postButton">Connect</div></a><a href="#"><div class="viewButton">View Profile</div></a>
+									<%= link_to post_path result do %>
+										<%= link_to post_connect_path result do %><div class="postButton">Connect</div><% end %><%= link_to profile_path(result.created_by) do %><div class="viewButton">View Profile</div><% end %>
+									<% end %>
 								</div>
 							</div>
 						<% end %>

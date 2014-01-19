@@ -16,6 +16,9 @@ class User < ActiveRecord::Base
   validates :name,  presence: true
 
 
+  attr_accessible :name, :email, :password
+
+
   def can_post
     if self.completed_transactions.last
       if self.completed_transactions.last.reviews.count > 0

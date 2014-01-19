@@ -2,3 +2,7 @@
 <p>Find me in app/views/home/index.html.erb</p>
 
 Can post? <%= user_signed_in? ? current_user.can_post : "Not signed in" %>
+
+<% if user_signed_in? %>
+  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+<% end %>

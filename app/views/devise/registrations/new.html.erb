@@ -5,6 +5,17 @@
 		<link rel="stylesheet" type="text/css" href="signup.css"/>
 	</head>
 	<body>
+			<div class="navbar">
+				<%= image_tag 'karmic-logo.svg', class: 'logo' %>
+				<div class="navLinks">
+					<%= link_to  new_user_registration_path, class: 'navLink' do %>
+						<div>Sign Up</div>
+					<% end %>
+					<%= link_to new_user_session_path, class: 'navLink' do %>
+						<div>Log In</div>
+					<% end %>
+				</div>
+			</div>
 		<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 		<%= devise_error_messages! %>
 		<div class="modal">

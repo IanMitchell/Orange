@@ -18,7 +18,10 @@
                                           <div>Welcome <%= current_user.name %></div>
                                         <% end %>
                                         <% if user_signed_in? %>
-					<%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'navLink' %>
+
+					<%= link_to destroy_user_session_path, method: :delete, class: 'navLink' do %>
+					<div>Sign Out</div>
+					<% end %>
 <% end %>				
 </div>
 			</div>

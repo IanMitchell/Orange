@@ -41,6 +41,6 @@ class PostsController < ApplicationController
 
     @post.status = :completed
 
-    redirect_to dashboard_show_path
+    redirect_to dashboard_path
   end
 end

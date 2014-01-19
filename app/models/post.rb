@@ -24,7 +24,7 @@ class Post < ActiveRecord::Base
 
 
   attr_reader :tag_tokens
-  attr_accessible :name, :tag_tokens, :image, :url
+  attr_accessible :name, :tag_tokens, :user, :buyer, :reviews, :status, :description
 
   def tag_tokens=(tokens)
     self.tag_ids = Tag.ids_from_tokens(tokens)

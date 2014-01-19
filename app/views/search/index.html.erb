@@ -51,7 +51,11 @@
 				<div class="feedBox">
 					<div class="postFeed">
 						<h2 class="feedHead">
-							<%= @results.count unless @results.nil? %> Results for <b><%= params[:query] %></b> in <b>San Luis Obispo, CA</b></h2>
+							<% if params[:query] %>
+								<%= @results.count unless @results.nil? %> Results for <b><%= params[:query] %></b> in <b>San Luis Obispo, CA</b></h2>
+							<% else %>
+								All Posts</h2>
+							<% end %>
 
 						<% @results.each do |result| %>
 							<div class="post <%= result.created_by==result.user ? 'takePost' : 'givePost' %>">
@@ -74,9 +78,10 @@
 				<div class="sidebar">
 					<h1>Filter Results</h1>
 					<ul>
-						<li><input type="checkbox" class="searchCheckbox" id="option1"/> <label for="option1">Option 1</label></li>
-						<li><input type="checkbox" class="searchCheckbox" id="option2"/> <label for="option1">Option 2</label></li>																<li><input type="checkbox" class="searchCheckbox" id="option3"/> <label for="option1">Option 3</label></li>
-						<li><i>Praesent quis augue tortor. Aliquam nec dolor viverra, viverra nisi eget, mollis est.</i></li>
+						<li><input type="checkbox" class="searchCheckbox" id="option1"/> <label for="option1">Date</label></li>
+						<li><input type="checkbox" class="searchCheckbox" id="option2"/> <label for="option1">Rating</label></li>
+						<li><input type="checkbox" class="searchCheckbox" id="option3"/> <label for="option1">Ratio</label></li>
+						<li><i>Too many results? Narrow your search by date, the user rating, or the user ratio.</i></li>
 					</ul>
 				</div>
 			</div>

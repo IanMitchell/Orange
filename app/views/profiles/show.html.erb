@@ -1,4 +1,98 @@
-<h1>Profile</h1>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Karmik</title>
+		<link rel="stylesheet" type="text/css" href="profile.css"/>
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<div class="headerWrapper">
+			<div class="header">
+				<img src="karmic-logo.svg" class="logo"/>
+				<div class="navLinks">
+					<a class="navLink" href="#"><div>Search</div></a>
+					<a class="navLink" href="#"><div>Welcome User!</div></a>
+				</div>
+			</div>
+		</div>
+		<form>
+		<div class="heroWrapper">
+			<div class="hero">
+				<div class="userHero">
+					<img src="http://placehold.it/150x150" class="pictureHero"/>
+					<div class="namePlaceHero">
+						<h2 class="nameHero">Kristin McCarty</h2>
+						<h2 class="placeHero">San Luis Obispo, CA</h2>
+					</div>
+				</div>
+				<div class="statHero">
+					
+				</div>
+			</div>
+		</div>
+		<div class="dashboardWrapper">
+			<div class="feedWrapper">
+				<div class="feedBox">
+					<h3>About Me</h3>
+					<p>Laborum organic 90's McSweeney's elit dolore. Ethnic cray Banksy kitsch Brooklyn 90's blog trust fund. Neutra 3 wolf moon XOXO esse, ethnic church-key Pitchfork dolore fixie tempor nihil Portland tousled. Cupidatat commodo occupy, artisan readymade VHS typewriter next level raw denim skateboard aliquip blog biodiesel fugiat fashion axe. Wolf duis freegan bespoke fashion axe. Brunch art party beard pickled chillwave. Quis id sapiente cred velit laboris.</p>
+					<h3>Skills and Interests</h3>
+					<p class="orange">Lorem, ipsum, dolor, sit, amet, consectetur, adipiscing, elit, Integer</p>
+					<h3>Reviews</h3>
+					<div class="reviewBox">
+						<div class="reviewLeft">
+							<img src="http://placehold.it/70x70" class="reviewPicture"/>
+							<div class="reviewRating"><i class="fa fa-smile-o"></i></div>
+							<p class="reviewName"><b>Michael M.</b></p>
+							<p class="reviewPlace">San Luis Obispo, CA</p>
+						</div>
+						<div class="reviewRight">
+							<p>Cillum salvia odio, exercitation esse ethical semiotics irure whatever mlkshk keffiyeh tote bag bespoke. Mlkshk magna fashion axe Schlitz, craft beer try-hard deep v nihil. Echo Park excepteur chambray biodiesel, PBR&B squid Wes Anderson nostrud seitan mixtape Thundercats. Velit fap Tumblr cred, enim Neutra blog chillwave. Dolor sunt Terry Richardson cliche, Tumblr nostrud American Apparel delectus Helvetica cardigan.</p>
+						</div>
+					</div>
+					<hr>
+					<div class="reviewBox">
+						<div class="reviewLeft">
+							<img src="http://placehold.it/70x70" class="reviewPicture"/>
+							<div class="reviewRating"><i class="fa fa-smile-o"></i></div>
+							<p class="reviewName"><b>Michael M.</b></p>
+							<p class="reviewPlace">San Luis Obispo, CA</p>
+						</div>
+						<div class="reviewRight">
+							<p>Cillum salvia odio, exercitation esse ethical semiotics irure whatever mlkshk keffiyeh tote bag bespoke. Mlkshk magna fashion axe Schlitz, craft beer try-hard deep v nihil. Echo Park excepteur chambray biodiesel, PBR&B squid Wes Anderson nostrud seitan mixtape Thundercats. Velit fap Tumblr cred, enim Neutra blog chillwave. Dolor sunt Terry Richardson cliche, Tumblr nostrud American Apparel delectus Helvetica cardigan.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sidebarWrapper">
+				<div class="sidebar">
+					<div class="postFeed">
+						<h2 class="feedHead">Open Posts</h2>
+						<div class="post givePost">
+							<div class="feedTextBox">
+								<h3 class="postTitle">Looking for someone to teach me about PHP</h3>
+								<p>Test test test test test test test test test test test test test test test test test.</p>
+								<a href="#"><div class="postButton">Connect</div></a>
+							</div>
+						</div>
+						<div class="post takePost">
+							<div class="feedTextBox">
+								<h3 class="postTitle">Looking for someone to teach me about PHP</h3>
+								<p>Test test test test test test test test test test test test test test test test test.</p>
+								<a href="#"><div class="postButton">Connect</div></a>
+							</div>
+						</div>
+						<a href=""><div class="shoveToRight orange">View All ></div></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		</form>
+		<footer><h5>&#169; Copyright Karmik 2014. All Rights Reserved.</h5></footer>
+	</body>
+</html>
+
+<!--<h1>Profile</h1>
 <br>
 <h2>About</h2>
 
@@ -34,7 +128,6 @@
 <h2>Service</h2>
 <br>
 <h2>Reviews</h2>
-<!--<p>Find me in app/views/profiles/show.html.erb</p>-->
 <% unless @user.updated_at.nil? %>
 <%= @user.updated_at %> <br>
 <% end %>
@@ -44,4 +137,4 @@
 <% end %>
 <% @user.reviews.each do |review| %>
   <%= review.feedback %>
-<% end %>
+<% end %>-->

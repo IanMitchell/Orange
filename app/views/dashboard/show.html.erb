@@ -14,7 +14,7 @@
 			<div class="header">
 				<%= image_tag 'karmic-logo.svg', class: 'logo' %>
 				<div class="navLinks">
-					<%= link_to search_index_path, class: 'navLink' do%>
+					<%= link_to search_path, class: 'navLink' do%>
 					<div>Search</div>
 					<% end %>
 					<%= link_to profile_path(current_user), class: 'navLink' do %>
@@ -57,11 +57,7 @@
 									<h3 class="postTitle"><%= post.title %></h3>
 									<p><%= post.description %></p>
 									<%= link_to post_path post do %>
-										<a href="#"><div class="postButton">Connect</div></a>
-
-					<%= link_to profile_path(post.user ? post.user : post.buyer), class: 'viewButton' do %>
-             <div>View Profile</div>
-          <% end %>
+										<a href="#"><div class="postButton">Connect</div></a><a href="#"><div class="viewButton">View Profile</div></a>
 									<% end %>
 								</div>
 							</div>
@@ -76,19 +72,23 @@
 						<%= link_to new_post_path do%>
 						<li>New Post</li>
 						<% end %>
-						
+
 						<%= link_to edit_user_registration_path  do%>
 						<li>Edit Profile</li>
-						<% end %>	
-						<%= link_to search_index_path do%>
+						<% end %>
+
+						<%= link_to search_path do%>
 						<li>Search</li>
 						<% end %>
 					</ul>
 					<ul>
 						<li class="listHeader">Your Posts</li>
-						<a href="#"><li>Open Posts</li></a>
-						<a href="#"><li>Current Posts</li></a>
-						<a href="#"><li>Completed Posts</li></a>
+						<%= link_to dashboard_path + '/open' do %>
+							<li>Open Posts</li>
+						<% end %>
+						<%= link_to dashboard_path + '/completed' do %>
+							<li>Completed Posts</li>
+						<% end %>
 					</ul>
 					<ul>
 						<li class="listHeader">Notifications</li>

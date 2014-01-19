@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
 
-
-  get "dashboard/show"
-
-  get "search/index"
+  get 'dashboard' => 'dashboard#show', as: :dashboard
+  get 'dashboard/:filter' => 'dashboard#show'
+  get 'search' => 'search#index'
 
   resources :reviews
 

@@ -194,6 +194,36 @@ a:link{
 	display: inline-block;
 }
 
+.viewButton2{
+	width: 90px;
+	text-align: center;
+	padding: 5px;
+	color: #333333;
+	display: inline-block;
+	font-size: 12pt;
+	margin-right: 10px;
+}
+
+.viewButton3{
+	width: 30px;
+	text-align: center;
+	padding: 5px;
+	color: #333333;
+	display: inline-block;
+	font-size: 12pt;
+	margin-right: 10px;
+}
+
+.viewButton4{
+	width: 50px;
+	text-align: center;
+	padding: 5px;
+	color: #333333;
+	display: inline-block;
+	font-size: 12pt;
+	margin-right: 10px;
+}
+
 .viewButton:hover{
 	background-color: #333333;
 }

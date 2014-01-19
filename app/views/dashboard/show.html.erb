@@ -13,7 +13,9 @@
 			<div class="header">
 				<%= image_tag 'karmic-logo.svg', class: 'logo' %>
 				<div class="navLinks">
-					<a class="navLink" href="#"><div>Search</div></a>
+					<%= link_to search_index_path, class: 'navLink' do%>
+					<div>Search</div>
+					<% end %>
 					<%= link_to profile_path(current_user), class: 'navLink' do %>
                                           <div>Welcome <%= current_user.name %></div>
                                         <% end %>

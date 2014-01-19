@@ -13,12 +13,7 @@ gem 'spring',        group: :development
 
 gem 'devise', '>= 3.2'
 
-<<<<<<< HEAD
 
-
-
-=======
->>>>>>> 9e1c13e1b391a1d99ec74859a5652af1dec0b1f7
 group :development do
   gem "better_errors"
   gem "binding_of_caller"

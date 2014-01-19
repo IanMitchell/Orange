@@ -13,8 +13,11 @@ gem 'spring',        group: :development
 
 gem 'devise', '>= 3.2'
 
-
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
 end
+
+# Bad, but we have limited time
+gem 'protected_attributes'
+gem 'searchkick'

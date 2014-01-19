@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get "dashboard/show"
+
   resources :reviews
 
   resources :posts

@@ -5,6 +5,8 @@
 		<%= stylesheet_link_tag 'profile.css' %>
 				<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
 		<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic' rel='stylesheet' type='text/css'>
+		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  	<%= csrf_meta_tags %>
 	</head>
 	<body>
 		<div class="headerWrapper">
@@ -36,14 +38,14 @@
 						<h2 class="placeHero"><% unless @user.city.nil? %>
 <%= @user.city %>
 <% end %>
-<% unless @user.state.nil? %>, 
+<% unless @user.state.nil? %>,
 <%= @user.state %>
 <% end %></h2>
 					</div>
 				</div>
 				<div class="statHero">
 					<div class="gameHero">
-						<img src="badges.jpg"/>
+						<%= image_tag 'badges.jpg' %>
 					</div>
 					<div class="ratioHero">
 						<div class="giveBox"><h1>18</h1><p>TIMES GIVEN</p></div>

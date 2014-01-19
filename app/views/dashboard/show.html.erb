@@ -77,15 +77,18 @@
 						<li>Edit Profile</li>
 						<% end %>
 
-						<%= link_to search_index_path do%>
+						<%= link_to search_path do%>
 						<li>Search</li>
 						<% end %>
 					</ul>
 					<ul>
 						<li class="listHeader">Your Posts</li>
-						<a href="#"><li>Open Posts</li></a>
-						<a href="#"><li>Current Posts</li></a>
-						<a href="#"><li>Completed Posts</li></a>
+						<%= link_to dashboard_path + '/open' do %>
+							<li>Open Posts</li>
+						<% end %>
+						<%= link_to dashboard_path + '/completed' do %>
+							<li>Completed Posts</li>
+						<% end %>
 					</ul>
 					<ul>
 						<li class="listHeader">Notifications</li>

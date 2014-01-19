@@ -18,11 +18,6 @@ class Post < ActiveRecord::Base
   validates :description,   presence: true
 
 
-  scope :completed, -> {
-    where('status <> ?', STATUS[:completed])
-  }
-
-
   attr_reader :tag_tokens
   attr_accessible :title, :description, :user, :tag_tokens
 

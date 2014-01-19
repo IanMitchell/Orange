@@ -1,8 +1,29 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-
-Can post? <%= user_signed_in? ? current_user.can_post : "Not signed in" %>
-
-<% if user_signed_in? %>
-  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-<% end %>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Karmik</title>
+		<%= stylesheet_link_tag 'landing.css' %>
+	</head>
+	<body>
+		<div class="heroWrapper">
+			<div class="navbar">
+				<img src="karmic-logo.svg" class="logo"/>
+				<div class="navLinks">
+					<a class="navLink" href="#"><div>Sign Up</div></a>
+					<a class="navLink" href="#"><div>Log In</div></a>
+				</div>
+			</div>
+			<div class="hero">
+				<h1>Share your skills and give<br>back to your community.</h1>
+				<a href="#"><div class="heroSign">Sign Up for a Free Account</div></a><div class="heroMore">or&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Learn More ></a></div>
+			</div>
+		</div>
+		<div class="contentWrapper">
+			<div class="contentBox landingBox">
+				<h1>Urban Bartering with a Twist</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id semper lorem. Phasellus non est neque. In hac habitasse platea dictumst. Nulla vel imperdiet mauris. Nullam euismod malesuada ante, sit amet scelerisque erat porta hendrerit. Suspendisse bibendum felis sit amet malesuada ornare. Etiam condimentum massa eget urna convallis, sit amet facilisis sapien vehicula.</p>
+			</div>
+		</div>
+		<footer><h5>&#169; Copyright Karmik 2014. All Rights Reserved.</h5></footer>
+	</body>
+</html>

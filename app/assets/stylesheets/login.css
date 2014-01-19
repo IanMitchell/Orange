@@ -10,7 +10,7 @@ body {
 	background-position: center center;
 	background-size: cover;
 	position: relative;
-	min-height: 500px;
+	min-height: 364px;
 }
 
 body *{
@@ -31,7 +31,7 @@ body *{
 	position: absolute;
 	font-family: Ubuntu;
 	top: 50%;
-	margin-top: -277px;
+	margin-top: -182px;
 }
 
 .modal > .modalBox{

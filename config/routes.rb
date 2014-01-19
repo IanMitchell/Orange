@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :posts
 
-  get "profiles/:id" => 'profiles#show'
+  get "profiles/:id" => 'profiles#show', as: :profile
 
   devise_for :users
   root 'home#index'

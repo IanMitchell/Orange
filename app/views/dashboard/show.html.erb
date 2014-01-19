@@ -48,8 +48,10 @@
 				<h1>Welcome <%= current_user.name %>!</h1>
 				<ul>
 					<a href="#"><li>New Post</li></a>
-					<a href="#"><li>Edit Profile</li></a>
-					<a href="#"><li>Search</li></a>
+					<a href="#"><li>Edit Profile</li></a>			
+					<%= link_to search_index_path do%>
+					<li>Search</li>
+					<% end %>
 				</ul>
 				<ul>
 					<li class="listHeader">Your Posts</li>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140118201335) do
+ActiveRecord::Schema.define(version: 20140119191253) do
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -19,12 +19,14 @@ ActiveRecord::Schema.define(version: 20140118201335) do
     t.string   "address"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "status",      default: 0
+    t.integer  "status",        default: 0
     t.integer  "user_id"
     t.integer  "buyer_id"
+    t.integer  "created_by_id"
   end
 
   add_index "posts", ["buyer_id"], name: "index_posts_on_buyer_id"
+  add_index "posts", ["created_by_id"], name: "index_posts_on_created_by_id"
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
   create_table "posts_tags", force: true do |t|

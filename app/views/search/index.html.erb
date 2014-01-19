@@ -1,2 +1,74 @@
-<h1>Search#index</h1>
-<p>Find me in app/views/search/index.html.erb</p>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Karmik</title>
+		<link rel="stylesheet" type="text/css" href="search.css"/>
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<div class="headerWrapper">
+			<div class="header">
+				<img src="karmic-logo.svg" class="logo"/>
+				<div class="navLinks">
+					<a class="navLink" href="#"><div>Search</div></a>
+					<a class="navLink" href="#"><div>Welcome User!</div></a>
+				</div>
+			</div>
+		</div>
+		<form>
+		<div class="heroWrapper">
+			<div class="hero">
+				<h1>Search</h1>
+				<div class="heroSelect">
+					<select>
+					    <option value="volvo">I Need</option>
+					    <option value="saab">I Can Give</option>
+					</select>
+					<div class="dropArrow">
+						<i class="fa fa-caret-down"></i>
+					</div>
+				</div>
+				<input type="text" placeholder="Search" class="searchBox"/>
+				<input type="submit" class="searchButton" value="Get Results"/>
+			</div>
+		</div>
+		<div class="dashboardWrapper">
+			<div class="feedWrapper">
+				<div class="feedBox">
+					<div class="postFeed">
+						<h2 class="feedHead">Results for <b>SEARCH_QUERY</b> in <b>San Luis Obispo, CA</b></h2>
+						<div class="post givePost">
+							<img src="http://placehold.it/150x150" class="feedProfilePic"/>
+							<div class="feedTextBox">
+								<h3 class="postTitle">Looking for someone to teach me about PHP</h3>
+								<p>Test test test test test test test test test test test test test test test test test.</p>
+								<a href="#"><div class="postButton">Connect</div></a><a href="#"><div class="viewButton">View Profile</div></a>
+							</div>
+						</div>
+						<div class="post takePost">
+							<img src="http://placehold.it/150x150" class="feedProfilePic"/>
+							<div class="feedTextBox">
+								<h3 class="postTitle">Looking for someone to teach me about PHP</h3>
+								<p>Test test test test test test test test test test test test test test test test test.</p>
+								<a href="#"><div class="postButton">Connect</div></a><a href="#"><div class="viewButton">View Profile</div></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sidebarWrapper">
+				<div class="sidebar">
+					<h1>Filter Results</h1>
+					<ul>
+						<li><input type="checkbox" class="searchCheckbox" id="option1"/> <label for="option1">Option 1</label></li>
+						<li><input type="checkbox" class="searchCheckbox" id="option2"/> <label for="option1">Option 2</label></li>																<li><input type="checkbox" class="searchCheckbox" id="option3"/> <label for="option1">Option 3</label></li>
+						<li><i>Praesent quis augue tortor. Aliquam nec dolor viverra, viverra nisi eget, mollis est.</i></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		</form>
+		<footer><h5>&#169; Copyright Karmik 2014. All Rights Reserved.</h5></footer>
+	</body>
+</html>

@@ -1,0 +1,127 @@
+html, body{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background-image: url(karmik-bkgd.gif);
+	background-position: center center;
+	background-size: cover;
+	position: relative;
+	min-height: 500px;
+}
+
+body *{
+	font-weight: 300 !important;
+}
+
+.logo{
+	width: 200px;
+	display: inline-block;
+	text-align: center;
+	margin-bottom: -8px;
+}
+
+.modal {
+	text-align: center;
+	width: 100%;
+	z-index: 12;
+	position: absolute;
+	font-family: Ubuntu;
+	top: 50%;
+	margin-top: -277px;
+}
+
+.modal > .modalBox{
+	display: inline-block;
+	width: 100%;
+	max-width: 500px;
+	padding: 0px;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.modal > .modalBox > .boxHead > h1{
+	padding: 0px;
+	margin: 0px;
+	font-weight: 300;
+	color: white;
+}
+
+.modal > .modalBox > .boxHead{
+	position: relative;
+	border-radius: 5px 5px 0px 0px;
+	background-color: #F05323;
+	box-sizing: border-box;
+	width: 100%;
+	margin: 0px;
+	text-align: center;
+	padding: 10px;
+	padding-bottom: 13px;
+}
+
+.modal > .modalBox > .boxHead > .closeBox:hover{
+	cursor: pointer;
+	color: black;
+}
+
+.modal > .modalBox > .boxBody{
+	border-radius: 0px 0px 5px 5px;
+	background-color: #934124;
+	padding: 20px;
+	padding-top: 0px;
+	box-sizing: border-box;
+}
+
+.modal > .modalBox > .boxBody > label{
+	font-size: 14pt;
+	padding: 0px;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	margin: 0px;
+	text-align: left;
+	color: white;
+}
+
+.modal > .modalBox > .boxBody > input{
+	width: 100%;
+	padding: 5px;
+	padding: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 0px;
+	margin-right: 10px;
+	box-sizing: border-box;
+	font-size: 14pt;
+	border: none;
+	background-color: rgba(255,255,255,0.9);
+	border-radius: 5px;
+}
+
+.modal > .modalBox > .boxBody > input:focus{
+	background-color: rgba(255,255,255,1.0);
+}
+
+.modal > .modalBox > .boxBody > button{
+	width: 100%;
+	margin-top: 20px;
+	border-radius: 5px;
+	font-size: 14pt;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #EE5230;
+	color: white;
+	border: none;
+}
+
+.modal > .modalBox > .boxBody > button:hover{
+	background-color: white;
+	cursor: pointer;
+	color: black;
+}
+
+.modal > .modalBox > .boxBody > *{
+	display: block;
+}

@@ -1,11 +1,11 @@
+html, body {
+    height: 100%;
+}
+
 body{
 	margin: 0px;
 	padding: 0px;
 	min-width: 660px;
-}
-
-a:visited {
-	color: inherit;
 }
 
 .headerWrapper{
@@ -83,16 +83,25 @@ a:link{
 	padding: 20px;
 }
 
+.hero h1{
+	font-weight: 400;
+}
+
 .dashboardWrapper{
-	width: 100%;
 	max-width: 1000px;
-	min-height: 650px;
-	padding-right: 300px;
 	box-sizing: border-box;
-	position: relative;
 	margin-left: auto;
 	margin-right: auto;
 	font-family: Ubuntu;
+}
+
+.feedWrapper{
+	width: 100%;
+	float: right;
+}
+
+.feedBox{
+	margin-right: 300px;
 }
 
 .postFeed{
@@ -106,13 +115,18 @@ a:link{
 	position: absolute;
 	left: 0px;
 	top: 0px;
+	border-radius: 200px;
+	overflow: hidden;
+	width: 110px;
+	height: 110px;
+	margin: 20px;
 }
 
 .post{
 	width: 100%;
 	position: relative;
 	box-sizing: border-box;
-	padding-left: 150px;
+	padding-left: 140px;
 	border: 1px solid #d9d9d9;
 	margin-bottom: 10px;
 }
@@ -163,10 +177,25 @@ a:link{
 
 .postButton{
 	background-color: grey;
-	width: 130px;
+	width: 90px;
 	text-align: center;
 	padding: 5px;
 	color: white;
+	display: inline-block;	
+	margin-right: 10px;
+}
+
+.viewButton{
+	background-color: grey;
+	width: 120px;
+	text-align: center;
+	padding: 5px;
+	color: white;
+	display: inline-block;
+}
+
+.viewButton:hover{
+	background-color: #333333;
 }
 
 .takePost .postButton{
@@ -181,11 +210,14 @@ a:link{
 	background-color: #333333;
 }
 
+.sidebarWrapper{
+	float: right;
+	width: 300px; /*Width of right column*/
+	margin-right: -100%;
+}
+
 .sidebar{
-	width: 300px;
-	position: absolute;
-	right: 0px;
-	top: 0px;
+	width: 100%;
 	box-sizing: border-box;
 	padding: 20px;
 	padding-top: 5px;
@@ -237,13 +269,14 @@ li.listHeader{
 footer{
 	background-color: #333333;
 	width: 100%;
-	min-height: 100px;
+	height: 100px;
 	box-sizing: border-box;
 	font-family: Ubuntu;
 	padding: 20px;
 	padding-left: 50px;
 	color: rgba(255,255,255,0.5);
 	font-weight: 300;
+	clear: right;
 }
 
 footer *{

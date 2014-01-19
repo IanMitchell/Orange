@@ -46,6 +46,7 @@
 			</div>
 		</div>
 		<div class="dashboardWrapper">
+<<<<<<< HEAD
 			<div class="postFeed">
 				<h2 class="feedHead">Recent Posts in Your Community</h2>
 				<% @posts.each do |post| %>
@@ -58,36 +59,56 @@
 								<div class="postButton">View Full Post</div>
 							<% end %>
 						</div>
+=======
+			<div class="feedWrapper">
+				<div class="feedBox">
+					<div class="postFeed">
+						<h2 class="feedHead">Recent Posts in Your Community</h2>
+						<% @posts.each do |post| %>
+							<div class=<%= post.user ? "post takePost" : "post givePost" %>>
+								<img src=<%= get_gravatar(post.user ? post.user : post.buyer)%> class="feedProfilePic"/>
+								<div class="feedTextBox">
+									<h3 class="postTitle"><%= post.title %></h3>
+									<p><%= post.description %></p>
+									<%= link_to post_path post do %>
+										<a href="#"><div class="postButton">Connect</div></a><a href="#"><div class="viewButton">View Profile</div></a>
+									<% end %>
+								</div>
+							</div>
+						<% end %>
+>>>>>>> 5de332b88e7fa18badd82640c49a74aee60851fc
 					</div>
-				<% end %>
+				</div>
 			</div>
-			<div class="sidebar">
-				<h1>Welcome <%= current_user.name %>!</h1>
-				<ul>
-					<%= link_to new_post_path do%>
-					<li>New Post</li>
-					<% end %>
-					
-					<%= link_to edit_user_registration_path  do%>
-					<li>Edit Profile</li>
-					<% end %>
-					
-					<%= link_to search_index_path do%>
-					<li>Search</li>
-					<% end %>
-				</ul>
-				<ul>
-					<li class="listHeader">Your Posts</li>
-					<a href="#"><li>Open Posts</li></a>
-					<a href="#"><li>Current Posts</li></a>
-					<a href="#"><li>Completed Posts</li></a>
-				</ul>
-				<ul>
-					<li class="listHeader">Notifications</li>
-					<a href="#"><li>Request for Contact Info</li></a>
-					<a href="#"><li>Review Required</li></a>
-					<a href="#"><li><i>View more ></i></li></a>
-				</ul>
+			<div class="sidebarWrapper">
+				<div class="sidebar">
+					<h1>Welcome <%= current_user.name %>!</h1>
+					<ul>
+						<%= link_to new_post_path do%>
+						<li>New Post</li>
+						<% end %>
+						
+						<%= link_to edit_user_registration_path  do%>
+						<li>Edit Profile</li>
+						<% end %>
+						
+						<%= link_to search_index_path do%>
+						<li>Search</li>
+						<% end %>
+					</ul>
+					<ul>
+						<li class="listHeader">Your Posts</li>
+						<a href="#"><li>Open Posts</li></a>
+						<a href="#"><li>Current Posts</li></a>
+						<a href="#"><li>Completed Posts</li></a>
+					</ul>
+					<ul>
+						<li class="listHeader">Notifications</li>
+						<a href="#"><li>Request for Contact Info</li></a>
+						<a href="#"><li>Review Required</li></a>
+						<a href="#"><li><i>View more ></i></li></a>
+					</ul>
+				</div>
 			</div>
 		</div>
 		<footer><h5>&#169; Copyright Karmik 2014. All Rights Reserved.</h5></footer>

@@ -9,7 +9,9 @@
 	<body>
 		<div class="headerWrapper">
 			<div class="header">
+				<%= link_to dashboard_path do %>
 				<%= image_tag 'karmic-logo.svg', class: 'logo' %>
+				<% end %>
 				<div class="navLinks">
 					<%= link_to search_path, class: 'navLink' do%>
 						<div>Search</div>

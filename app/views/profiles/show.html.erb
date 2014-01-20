@@ -95,7 +95,6 @@
 						<% if @posts.empty? %>
 						<h2 class="feedHead"><i>No posts found. :'( </i></h2>
 						<% else %>
-						<h2 class="feedHead">Recent Posts in Your Community</h2>
 						<% @posts.each do |post| %>
 							<div class="post <%= post.created_by==post.user ? 'takePost' : 'givePost' %>">
 								<div class="feedTextBox">

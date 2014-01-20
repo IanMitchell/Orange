@@ -559,3 +559,54 @@ li.orange{
 	border-bottom: 1px solid #EBEBEB;
 	margin-bottom: 40px;
 }
+
+.achBox{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -200px;
+	margin-top: -50px;
+}
+
+.acheivement{
+	height: 100px;
+	width: 400px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.achBadge{
+	height: 112px;
+	width: 112px;
+	margin: 0px;
+	position: relative;
+	margin-top: -5px;
+	margin-left: -6px;
+	float: left;
+}
+
+.achBody{
+	background-color: #E1653A;
+	height: 100%;
+	width: 100%;
+	border-radius: 50px 0px 0px 50px;
+	font-family: Ubuntu;
+	text-align: center;
+	padding-right: 20px;
+	box-sizing: border-box;
+}
+
+.achBody h2{
+	font-weight: 300;
+	color: #5c1d06;
+	position: relative;
+	top: 18px;
+}
+
+.achBody h1{
+	font-weight: 400;
+	color: white;
+	margin-top: -20px;
+	position: relative;
+	top: 20px;
+}

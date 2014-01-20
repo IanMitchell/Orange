@@ -100,7 +100,7 @@
 								<div class="feedTextBox">
 									<h3 class="postTitle"><%= post.title %></h3>
 									<p><%= post.description %></p>
-									<a href="http://localhost/textjudge.php"><div class="postButton">Connect</div></a>
+									<div class="postButton">Connect</div>
 								</div>
 							</div>
 						<% end %>
@@ -111,6 +111,24 @@
 			</div>
 		</div>
 		<footer><h5>&#169; Copyright Karmik 2014. All Rights Reserved.</h5></footer>
+		<div class="achBox" style="display: none;">
+			<div class="acheivement">
+			    <%= image_tag 'break-the-ice.png', class: 'achBadge' %>
+			    <div class="achBody">
+			    	<h2>Achievement Unlocked</h2>
+			    	<h1>Break the Ice</h1>
+			    </div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$( document ).ready(function() {
+				$('.postButton').click(function(){
+				    $(this).html('Sent!');
+				    $('.achBox').slideDown(1000);
+				    $('.achBox').delay(5000).slideUp(1000);
+				});
+			});
+		</script>
 	</body>
 </html>
 

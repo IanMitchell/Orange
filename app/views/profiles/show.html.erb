@@ -48,7 +48,7 @@
 						<%= image_tag 'badges.jpg' %>
 					</div>
 					<div class="ratioHero">
-						<div class="giveBox"><h1>18</h1><p>TIMES GIVEN</p></div>
+						<div class="giveBox"><h1>28</h1><p>TIMES GIVEN</p></div>
 						<div class="receiveBox"><h1>21</h1><p>TIMES RECEIVED</p></div>
 					</div>
 				</div>
@@ -61,29 +61,29 @@
 					<p><%= @user.description %></p>
 					<!--<p>Laborum organic 90's McSweeney's elit dolore. Ethnic cray Banksy kitsch Brooklyn 90's blog trust fund. Neutra 3 wolf moon XOXO esse, ethnic church-key Pitchfork dolore fixie tempor nihil Portland tousled. Cupidatat commodo occupy, artisan readymade VHS typewriter next level raw denim skateboard aliquip blog biodiesel fugiat fashion axe. Wolf duis freegan bespoke fashion axe. Brunch art party beard pickled chillwave. Quis id sapiente cred velit laboris.</p>-->
 					<h3>Skills and Interests</h3>
-					<p class="orange">Lorem, ipsum, dolor, sit, amet, consectetur, adipiscing, elit, Integer</p>
+					<p class="orange">Babysitting, Teaching, Programming</p>
 					<h3>Reviews</h3>
 					<div class="reviewBox">
 						<div class="reviewLeft">
-							<img src="http://placehold.it/70x70" class="reviewPicture"/>
+							<img src=<%= get_gravatar(User.find(5),70)%> class="reviewPicture"/>
 							<div class="reviewRating"><i class="fa fa-smile-o"></i></div>
-							<p class="reviewName"><b>Michael M.</b></p>
+							<p class="reviewName"><b><%= User.find(5).name %></b></p>
 							<p class="reviewPlace">San Luis Obispo, CA</p>
 						</div>
 						<div class="reviewRight">
-							<p>Cillum salvia odio, exercitation esse ethical semiotics irure whatever mlkshk keffiyeh tote bag bespoke. Mlkshk magna fashion axe Schlitz, craft beer try-hard deep v nihil. Echo Park excepteur chambray biodiesel, PBR&B squid Wes Anderson nostrud seitan mixtape Thundercats. Velit fap Tumblr cred, enim Neutra blog chillwave. Dolor sunt Terry Richardson cliche, Tumblr nostrud American Apparel delectus Helvetica cardigan.</p>
+							<p>Lorraine is a great babysitter. She is caring and loving. My children not only loved spending time with her, but was available last minute. We love her!</p>
 						</div>
 					</div>
 					<hr>
 					<div class="reviewBox">
 						<div class="reviewLeft">
-							<img src="http://placehold.it/70x70" class="reviewPicture"/>
+							<img src=<%= get_gravatar(User.find(12),70)%> class="reviewPicture"/>
 							<div class="reviewRating"><i class="fa fa-smile-o"></i></div>
-							<p class="reviewName"><b>Michael M.</b></p>
+							<p class="reviewName"><b><%= User.find(12).name %></b></p>
 							<p class="reviewPlace">San Luis Obispo, CA</p>
 						</div>
 						<div class="reviewRight">
-							<p>Cillum salvia odio, exercitation esse ethical semiotics irure whatever mlkshk keffiyeh tote bag bespoke. Mlkshk magna fashion axe Schlitz, craft beer try-hard deep v nihil. Echo Park excepteur chambray biodiesel, PBR&B squid Wes Anderson nostrud seitan mixtape Thundercats. Velit fap Tumblr cred, enim Neutra blog chillwave. Dolor sunt Terry Richardson cliche, Tumblr nostrud American Apparel delectus Helvetica cardigan.</p>
+							<p>Loraine was great. She tutored my kids and acted as a babysitter for them. She is a model professor and human being. Hopefully she will be available again in the future</p>
 						</div>
 					</div>
 				</div>

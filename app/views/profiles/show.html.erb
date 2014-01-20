@@ -48,7 +48,7 @@
 						<%= image_tag 'badges.jpg' %>
 					</div>
 					<div class="ratioHero">
-						<div class="giveBox"><h1>18</h1><p>TIMES GIVEN</p></div>
+						<div class="giveBox"><h1>28</h1><p>TIMES GIVEN</p></div>
 						<div class="receiveBox"><h1>21</h1><p>TIMES RECEIVED</p></div>
 					</div>
 				</div>
@@ -65,9 +65,9 @@
 					<h3>Reviews</h3>
 					<div class="reviewBox">
 						<div class="reviewLeft">
-							<img src="http://placehold.it/70x70" class="reviewPicture"/>
+							<img src=<%= get_gravatar(User.find(5),70)%> class="reviewPicture"/>
 							<div class="reviewRating"><i class="fa fa-smile-o"></i></div>
-							<p class="reviewName"><b>Michael M.</b></p>
+							<p class="reviewName"><b><%= User.find(5).name %></b></p>
 							<p class="reviewPlace">San Luis Obispo, CA</p>
 						</div>
 						<div class="reviewRight">
@@ -77,9 +77,9 @@
 					<hr>
 					<div class="reviewBox">
 						<div class="reviewLeft">
-							<img src="http://placehold.it/70x70" class="reviewPicture"/>
+							<img src=<%= get_gravatar(User.find(12),70)%> class="reviewPicture"/>
 							<div class="reviewRating"><i class="fa fa-smile-o"></i></div>
-							<p class="reviewName"><b>Michael M.</b></p>
+							<p class="reviewName"><b><%= User.find(12).name %></b></p>
 							<p class="reviewPlace">San Luis Obispo, CA</p>
 						</div>
 						<div class="reviewRight">
@@ -100,7 +100,7 @@
 								<div class="feedTextBox">
 									<h3 class="postTitle"><%= post.title %></h3>
 									<p><%= post.description %></p>
-									<a href="http://localhost/textjudge.php"><div class="postButton">Connect</div></a>
+									<a href="http://bmooredev.com/textjudge.php"><div class="postButton">Connect</div></a>
 								</div>
 							</div>
 						<% end %>

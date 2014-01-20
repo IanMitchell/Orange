@@ -22,10 +22,10 @@
 			</div>
 			<div class="hero">
 				<h1>Share your skills and give<br>back to your community.</h1>
-				<a href="#"><div class="heroSign">Sign Up for a Free Account</div></a><div class="heroMore">or&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Learn More ></a></div>
+				<a href="#"><div class="heroSign">Sign Up for a Free Account</div></a><div class="heroMore">or&nbsp;&nbsp;&nbsp;&nbsp;<a href="#myAnchor" class="anchorLink" href="#myAnchor" rel="" id="anchor1">Learn More ></a></div>
 			</div>
 		</section>
-		<div class="contentWrapper orange small">
+		<div class="contentWrapper orange small" name="myAnchor" id="myAnchor">
 			<div class="contentBox landingBox">
 				<p>This is Karmik, an online community where you can help others and give back to your local community.</p>
 			</div>
@@ -37,5 +37,15 @@
 			</div>
 		</div>
 		<footer><h5>&#169; Copyright Karmik 2014. All Rights Reserved.</h5></footer>
+		<script type="text/javascript">
+			$( document ).ready(function() {
+				$('a').click(function(){
+				    $('html, body').animate({
+				        scrollTop: $( $(this).attr('href') ).offset().top
+				    }, 500);
+				    return false;
+				});
+			});
+		</script>
 	</body>
 </html>

@@ -1,0 +1,8 @@
+Rails.application.config.assets.precompile += %w( landing.css )
+Rails.application.config.assets.precompile += %w( dashboard.css )
+Rails.application.config.assets.precompile += %w( button.css )
+Rails.application.config.assets.precompile += %w( search.css )
+Rails.application.config.assets.precompile += %w( profile.css )
+Rails.application.config.assets.precompile += %w( signup.css )
+Rails.application.config.assets.precompile += %w( login.css )
+Rails.application.config.assets.precompile += %w( application.css )

@@ -65,9 +65,9 @@
 					<h3>Reviews</h3>
 					<div class="reviewBox">
 						<div class="reviewLeft">
-							<img src=<%= get_gravatar(User.find(5),70)%> class="reviewPicture"/>
+							<img src=<%= get_gravatar(@user)%> class="reviewPicture"/>
 							<div class="reviewRating"><i class="fa fa-smile-o"></i></div>
-							<p class="reviewName"><b><%= User.find(5).name %></b></p>
+							<p class="reviewName"><b><%= @user.name %></b></p>
 							<p class="reviewPlace">San Luis Obispo, CA</p>
 						</div>
 						<div class="reviewRight">
@@ -77,9 +77,9 @@
 					<hr>
 					<div class="reviewBox">
 						<div class="reviewLeft">
-							<img src=<%= get_gravatar(User.find(12),70)%> class="reviewPicture"/>
+							<img src=<%= get_gravatar(@user)%> class="reviewPicture"/>
 							<div class="reviewRating"><i class="fa fa-smile-o"></i></div>
-							<p class="reviewName"><b><%= User.find(12).name %></b></p>
+							<p class="reviewName"><b><%= @user.name %></b></p>
 							<p class="reviewPlace">San Luis Obispo, CA</p>
 						</div>
 						<div class="reviewRight">

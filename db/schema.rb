@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140119234536) do
+ActiveRecord::Schema.define(version: 20160131033629) do
 
-  create_table "posts", force: true do |t|
+  create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.string   "address"
@@ -29,14 +29,14 @@ ActiveRecord::Schema.define(version: 20140119234536) do
   add_index "posts", ["created_by_id"], name: "index_posts_on_created_by_id"
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
-  create_table "posts_tags", force: true do |t|
+  create_table "posts_tags", force: :cascade do |t|
     t.integer "post_id", null: false
     t.integer "tag_id",  null: false
   end
 
   add_index "posts_tags", ["post_id", "tag_id"], name: "index_posts_tags_on_post_id_and_tag_id", unique: true
 
-  create_table "reviews", force: true do |t|
+  create_table "reviews", force: :cascade do |t|
     t.integer  "post_id"
     t.integer  "user_id"
     t.integer  "owner_id"
@@ -44,19 +44,20 @@ ActiveRecord::Schema.define(version: 20140119234536) do
     t.integer  "score",      default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "title"
   end
 
   add_index "reviews", ["owner_id"], name: "index_reviews_on_owner_id"
   add_index "reviews", ["post_id"], name: "index_reviews_on_post_id"
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
-  create_table "tags", force: true do |t|
+  create_table "tags", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

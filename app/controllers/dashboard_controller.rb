@@ -9,7 +9,8 @@ class DashboardController < ApplicationController
    elsif params[:filter] == "completed"
       #@posts = current_user.posts.completed
       @posts = Post.where(created_by: current_user).completed.order('created_at DESC')
-      #@posts.zip(Post.where(buyer: current_user).completed).flatten.compact
+      @posts = @posts + Post.where(buyer_id: current_user).completed 
+   #@posts.zip(Post.where(buyer: current_user).completed).flatten.compact
     elsif params[:filter] == "all"
       @posts = Post.where(created_by: current_user).order('created_at DESC')
       #@posts.zip(Post.where(created_by: current_user)).flatten.compact

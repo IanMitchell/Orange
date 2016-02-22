@@ -17,3 +17,5 @@
 
 # Pow Config
 .powder
+
+*.DS_Store

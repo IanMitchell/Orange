@@ -1,131 +1,132 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Karmik</title>
-		<%= stylesheet_link_tag 'dashboard.css' %>
-		<%= stylesheet_link_tag 'button.css' %>
-		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  	<%= csrf_meta_tags %>
-		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
-		<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic' rel='stylesheet' type='text/css'>
+<head>
+	<title>Karmik</title>
+	<%= stylesheet_link_tag 'dashboard.css' %>
+	<%= stylesheet_link_tag 'button.css' %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<%= csrf_meta_tags %>
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic' rel='stylesheet' type='text/css'>
 
-	</head>
-	<body>
-		<div class="headerWrapper">
-			<div class="header">
-				<%= link_to dashboard_path do %>
+</head>
+<body>
+	<div class="headerWrapper">
+		<div class="header">
+			<%= link_to dashboard_path do %>
 				<%= image_tag 'karmic-logo.svg', class: 'logo' %>
+			<% end %>
+			<div class="navLinks">
+				<%= link_to search_path, class: 'navLink' do%>
+					<div>Search</div>
 				<% end %>
-				<div class="navLinks">
-					<%= link_to search_path, class: 'navLink' do%>
-						<div>Search</div>
+				<%= link_to profile_path(current_user), class: 'navLink' do %>
+					<div><%= current_user.name %></div>
+				<% end %>
+				<% if user_signed_in? %>
+					<%= link_to destroy_user_session_path, method: :delete, class: 'navLink' do %>
+						<div>Sign Out</div>
 					<% end %>
-					<%= link_to profile_path(current_user), class: 'navLink' do %>
-             <div><%= current_user.name %></div>
-          <% end %>
-          <% if user_signed_in? %>
-						<%= link_to destroy_user_session_path, method: :delete, class: 'navLink' do %>
-							<div>Sign Out</div>
-						<% end %>
-					<% end %>
-					<div class="navLink">
+				<% end %>
+				<div class="navLink">
 					<script src="https://checkout.stripe.com/checkout.js"></script>
+					<button id="customButton">Go Premium</button>
+					<script>
+					var handler = StripeCheckout.configure({
+						key: 'pk_test_VA8Gg7GG9kMwVekeBFtgrPNC',
+						image: '/assets/k-icon.jpg',
+						token: function(token, args) {
+							// Use the token to create the charge with a server-side script.
+						}
+					});
 
-  <button id="customButton">Go Premium</button>
-  <script>
-  var handler = StripeCheckout.configure({
-    key: 'pk_test_VA8Gg7GG9kMwVekeBFtgrPNC',
-    image: '/assets/k-icon.jpg',
-    token: function(token, args) {
-      // Use the token to create the charge with a server-side script.
-    }
-  });
-
-  document.getElementById('customButton').addEventListener('click', function(e) {
-    // Open Checkout with further options
-    handler.open({
-      name: 'Karmik',
-      description: 'Activate Premium',
-      amount: 500
-    });
-    e.preventDefault();
-  });
-</script>
-</form>
+					document.getElementById('customButton').addEventListener('click', function(e) {
+						// Open Checkout with further options
+						handler.open({
+							name: 'Karmik',
+							description: 'Activate Premium',
+							amount: 500
+						});
+						e.preventDefault();
+					});
+					</script>
+				</form>
+			</div>
+	  </div>
+	</div>
 </div>
-				</div>
-			</div>
-		</div>
-		<div class="heroWrapper">
-			<div class="hero">
-				<h1>Dashboard</h1>
-			</div>
-		</div>
-		<div class="dashboardWrapper">
-			<div class="feedWrapper">
-				<div class="feedBox">
-					<div class="postFeed">
-					        <% if @posts.empty? %>
-						<h2 class="feedHead"><i>No posts found. :'( </i></h2>
-						<% else %>
-						<h2 class="feedHead">Recent Posts in Your Community</h2>
-						<% @posts.each do |post| %>
-							<div class="post <%= post.created_by==post.user ? 'takePost' : 'givePost' %>">
-								<img src=<%= get_gravatar(post.created_by)%> class="feedProfilePic"/>
-								<div class="feedTextBox">
-									<h3 class="postTitle"><%= post.title %></h3>
-									<p><%= post.description %></p>
-									<%= link_to post_path post do %>
+<div class="heroWrapper">
+	<div class="hero">
+		<h1>Dashboard</h1>
+	</div>
+	</div>
+<div class="dashboardWrapper">
+	<div class="feedWrapper">
+		<div class="feedBox">
+			<div class="postFeed">
+				<% if @posts.empty? %>
+					<h2 class="feedHead"><i>No posts found. :'( </i></h2>
+				<% else %>
+					<h2 class="feedHead">Recent Posts in Your Community</h2>
+					<% @posts.each do |post| %>
+						<div class="post <%= post.created_by == post.user ? 'takePost' : 'givePost' %>">
+							<img src=<%= get_gravatar(post.created_by)%> class="feedProfilePic"/>
+							<div class="feedTextBox">
+								<h3 class="postTitle"><%= post.title %></h3>
+								<p><%= post.description %></p>
+								<%= link_to post_path post do %>
 									<%= link_to post_connect_path post do %><div class="postButton">Connect</div><% end %>
 									<%= link_to profile_path(post.created_by) do %><div class="viewButton2">View Profile</div><% end %>
 									<% if post.created_by == current_user %>
 										<%= link_to edit_post_path post do %><div class="viewButton3">Edit</div><% end %>
-										<%= link_to destroy_post_path post, :confirm => 'Are you sure you want to delete?', :method => :delete do %><div class="viewButton4">Delete</div><% end %>
-										<% end %><% end %>
-								</div>
-							</div>
-						<% end %>
-						<% end %>
-					</div>
-				</div>
-			</div>
-			<div class="sidebarWrapper">
-				<div class="sidebar">
-					<h1>Welcome <%= current_user.name %>!</h1>
-					<ul>
-						<%= link_to new_post_path do%>
-						<li>New Post</li>
-						<% end %>
-
-						<%= link_to edit_user_registration_path  do%>
-						<li>Edit Profile</li>
-						<% end %>
-
-						<%= link_to search_path do%>
-						<li>Search</li>
-						<% end %>
-					</ul>
-					<ul>
-						<li class="listHeader">Your Posts</li>
-						<%= link_to dashboard_path + '/all' do %>
-							<li>All Posts</li>
-						<% end %>
-						<%= link_to dashboard_path + '/open' do %>
-							<li>Open Posts</li>
-						<% end %>
-						<%= link_to dashboard_path + '/completed' do %>
-							<li>Completed Posts</li>
-						<% end %>
-					</ul>
-					<ul>
-						<li class="listHeader">Notifications</li>
-						<a href="#"><li>Request for Contact Info</li></a>
-						<a href="#"><li>Review Required</li></a>
-						<a href="#"><li><i>View more ></i></li></a>
-					</ul>
-				</div>
-			</div>
+									 <%= link_to 'Delete',destroy_post_path(post), class: 'viewButton4', method: :delete, data: { confirm: "Are you sure?" } %></td>
+						      	<%= link_to new_post_review_path post do %><div class="viewButton4">Review</div><% end %>
+									<% elsif post.buyer == current_user %>
+										 <%= link_to new_post_review_path post do %><div class="viewButton4">Review</div><% end %>
+								  <% end %>
+							  <% end %>
+		 					</div>
+	 				  </div>
+	 			  <% end %>
+	 		  <% end %>
+	 		</div>
+	 	</div>
+	</div>
+	<div class="sidebarWrapper">
+		<div class="sidebar">
+			<h1>Welcome <%= current_user.name %>!</h1>
+			<ul>
+				<%= link_to new_post_path do%>
+					<li>New Post</li>
+				<% end %>
+				<%= link_to edit_user_registration_path  do%>
+					<li>Edit Profile</li>
+				<% end %>
+				<%= link_to search_path do%>
+					<li>Search</li>
+				<% end %>
+			</ul>
+			<ul>
+				<li class="listHeader">Your Posts</li>
+					<%= link_to dashboard_path + '/all' do %>
+						<li>All Posts</li>
+					<% end %>
+				<%= link_to dashboard_path + '/open' do %>
+					<li>Open Posts</li>
+				<% end %>
+				<%= link_to dashboard_path + '/completed' do %>
+					<li>Completed Posts</li>
+				<% end %>
+			</ul>
+			<ul>
+				<li class="listHeader">Notifications</li>
+				<a href="#"><li>Request for Contact Info</li></a>
+				<a href="#"><li>Review Required</li></a>
+				<a href="#"><li><i>View more ></i></li></a>
+			</ul>
 		</div>
-		<footer><h5>&#169; Copyright Karmik 2014. All Rights Reserved.</h5></footer>
-	</body>
+	</div>
+</div>
+<footer><h5>&#169; Copyright Karmik 2014. All Rights Reserved.</h5></footer>
+</body>
 </html>

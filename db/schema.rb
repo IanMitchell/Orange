@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160131033629) do
+ActiveRecord::Schema.define(version: 20160223225444) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
@@ -39,16 +39,16 @@ ActiveRecord::Schema.define(version: 20160131033629) do
   create_table "reviews", force: :cascade do |t|
     t.integer  "post_id"
     t.integer  "user_id"
-    t.integer  "owner_id"
+    t.integer  "reviewee_id"
     t.string   "feedback"
-    t.integer  "score",      default: 0
+    t.integer  "score",       default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "title"
   end
 
-  add_index "reviews", ["owner_id"], name: "index_reviews_on_owner_id"
   add_index "reviews", ["post_id"], name: "index_reviews_on_post_id"
+  add_index "reviews", ["reviewee_id"], name: "index_reviews_on_reviewee_id"
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
   create_table "tags", force: :cascade do |t|

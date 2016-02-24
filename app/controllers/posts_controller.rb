@@ -50,9 +50,9 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.user
-      @post.buyer=current_user
+      @post.buyer = current_user
     else
-      @post.user=current_user
+      @post.user = current_user
     end
 
     @post.status = :completed

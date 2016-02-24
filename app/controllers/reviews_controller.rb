@@ -1,27 +1,34 @@
 class ReviewsController < ApplicationController
+
+  before_action :authenticate_user!, except: [:index]
+  before_action :set_review, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, except: [:index]
+
   def index
     @review = Review.all
   end
 
   def show
-    @review = Review.find(params[:id])
   end
 
   def new
-    @page_title = 'Add Movie'
+    @page_title = 'Add Review'
     @review = Review.new
   end
 
   def edit
-    @review = Review.find(params[:id])
   end
 
   def create
-    @review = Review.create(review_params)
-  
+    @review = current_user.reviews.build(review_params)
+    if @post.user_id != current_user.id
+      @review.reviewee_id = @post.user_id
+    else
+      @review.reviewee_id = @post.buyer_id
+    end
     if @review.save
         flash[:notice] = "Review Created"
-        redirect_to posts_path
+        redirect_to root_path
     else
         flash[:alert] = "Review Not Created"
         render 'new'
@@ -29,16 +36,27 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    @review = Review.find(params[:id])
     if @review.update(review_params)
           flash[:notice] = "Review Updated"
           redirect_to :action => 'show', :id => @review
-      else
+    else
           flash[:alert] = "Review Not Updated"
           render :action => 'edit'
-      end
+    end
   end
+
+  private
+
+  def set_review
+    @review = Review.find(params[:id])
+  end
+
+  def set_post
+    @post = Post.find(params[:post_id])
+  end
+
   def review_params
-      params.require(:review).permit(:title, :feedback, :post_id, :user_id, :ownder_id, :score)
+      params.require(:review).permit(:title, :feedback, :score, :post_id, :reviewee_id).merge(post_id: @post.id)
   end
+
 end

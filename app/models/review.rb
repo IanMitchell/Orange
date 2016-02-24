@@ -1,11 +1,12 @@
 class Review < ActiveRecord::Base
   belongs_to :post
   belongs_to :user
-  belongs_to :owner, class_name: 'user'
+  belongs_to :reviewee, class_name: 'User'
 
 
   validates :user_id,  presence: true
-  validates :owner_id,  presence: true
+  validates :reviewee_id,  presence: true
+  validates :post_id,  presence: true
   validates :score,  presence: true
   validates :feedback,  presence: true,
                         length: { in: 3..256 }

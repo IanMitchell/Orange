@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Karmik</title>
-		<%= stylesheet_link_tag 'profile.css' %>
-				<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
-		<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic' rel='stylesheet' type='text/css'>
-		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  	<%= csrf_meta_tags %>
-	</head>
-	<body>
-		<div class="headerWrapper">
-			<div class="header">
-				<%= link_to dashboard_path do %>
-				<%= image_tag 'karmic-logo.svg', class: 'logo' %>
+<head>
+	<title>Karmik</title>
+	<%= stylesheet_link_tag 'profile.css' %>
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic' rel='stylesheet' type='text/css'>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="headerWrapper">
+		<div class="header">
+			<%= link_to dashboard_path do %>
+			<%= image_tag 'karmic-logo.svg', class: 'logo' %>
+			<% end %>
+			<div class="navLinks">
+				<%= link_to search_path, class: 'navLink' do%>
+				<div>Search</div>
 				<% end %>
-				<div class="navLinks">
-					<%= link_to search_path, class: 'navLink' do%>
-						<div>Search</div>
-					<% end %>
-					<%= link_to profile_path(current_user), class: 'navLink' do %>
-             			<div><%= current_user.name %></div>
-          			<% end %>
-          			<% if user_signed_in? %>
-						<%= link_to destroy_user_session_path, method: :delete, class: 'navLink' do %>
-							<div>Sign Out</div>
-						<% end %>
-					<% end %>
-				</div>
+				<%= link_to profile_path(current_user), class: 'navLink' do %>
+				<div><%= current_user.name %></div>
+				<% end %>
+				<% if user_signed_in? %>
+				<%= link_to destroy_user_session_path, method: :delete, class: 'navLink' do %>
+				<div>Sign Out</div>
+				<% end %>
+				<% end %>
 			</div>
 		</div>
-		<div class="heroWrapper">
-			<div class="hero">
-				<div class="userHero">
-					<img src=<%= get_gravatar(@user)%> class="pictureHero"/>
-					<div class="namePlaceHero">
-						<h2 class="nameHero"><%= @user.name %></h2>
-						<h2 class="placeHero"><% unless @user.city.nil? %>
-<%= @user.city %>
-<% end %>
-<% unless @user.state.nil? %>,
-<%= @user.state %>
-<% end %></h2>
+	</div>
+	<div class="heroWrapper">
+		<div class="hero">
+			<div class="userHero">
+				<img src=<%= get_gravatar(@user)%> class="pictureHero"/>
+				<div class="namePlaceHero">
+					<h2 class="nameHero"><%= @user.name %></h2>
+					<h2 class="placeHero"><% unless @user.city.nil? %>
+						<%= @user.city %>
+						<% end %>
+						<% unless @user.state.nil? %>,
+						<%= @user.state %>
+						<% end %></h2>
 					</div>
 				</div>
 				<div class="statHero">
@@ -63,19 +63,26 @@
 					<h3>Skills and Interests</h3>
 					<p class="orange">Babysitting, Teaching, Programming</p>
 					<h3>Reviews</h3>
-					<div class="reviewBox">
-						<div class="reviewLeft">
-							<img src=<%= get_gravatar(@user)%> class="reviewPicture"/>
-							<div class="reviewRating"><i class="fa fa-smile-o"></i></div>
-							<p class="reviewName"><b><%= @user.name %></b></p>
-							<p class="reviewPlace">San Luis Obispo, CA</p>
-						</div>
-						<div class="reviewRight">
-							<p>Lorraine is a great babysitter. She is caring and loving. My children not only loved spending time with her, but was available last minute. We love her!</p>
-						</div>
-					</div>
-					<hr>
-					<div class="reviewBox">
+					<% if @reviews.empty? %>
+						<h2 class="feedHead"><i>No reviews yet. :'( </i></h2>
+					<% else %>
+						<h2 class="feedHead">Recent Posts in Your Community</h2>
+						<% @reviews.each do |review| %>
+							<div class="reviewBox">
+								<div class="reviewLeft">
+									<img src=<%= get_gravatar(review.user)%> class="reviewPicture"/>
+									<div class="reviewRating"><i class="fa fa-smile-o"></i></div>
+									<p class="reviewName"><b><%= review.title %></b></p>
+									<p class="reviewPlace">San Luis Obispo, CA</p>
+								</div>
+								<div class="reviewRight">
+									<%= review.feedback %>
+								</div>
+							</div>
+							<hr>
+						<% end %>
+					<% end %>
+					<!--<div class="reviewBox">
 						<div class="reviewLeft">
 							<img src=<%= get_gravatar(@user)%> class="reviewPicture"/>
 							<div class="reviewRating"><i class="fa fa-smile-o"></i></div>
@@ -85,9 +92,9 @@
 						<div class="reviewRight">
 							<p>Lorraine was great. She tutored my kids and acted as a babysitter for them. She is a model professor and human being. Hopefully she will be available again in the future.</p>
 						</div>
-					</div>
-				</div>
-			</div>
+					</div>-->
+				</div><!-- close feedwrapper -->
+			</div><!-- close feedbox -->
 			<div class="sidebarWrapper">
 				<div class="sidebar">
 					<div class="postFeed">
@@ -96,13 +103,13 @@
 						<h2 class="feedHead"><i>No posts found. :'( </i></h2>
 						<% else %>
 						<% @posts.each do |post| %>
-							<div class="post <%= post.created_by==post.user ? 'takePost' : 'givePost' %>">
-								<div class="feedTextBox">
-									<h3 class="postTitle"><%= post.title %></h3>
-									<p><%= post.description %></p>
-									<div class="postButton">Connect</div>
-								</div>
+						<div class="post <%= post.created_by==post.user ? 'takePost' : 'givePost' %>">
+							<div class="feedTextBox">
+								<h3 class="postTitle"><%= post.title %></h3>
+								<p><%= post.description %></p>
+								<div class="postButton">Connect</div>
 							</div>
+						</div>
 						<% end %>
 						<% end %>
 						<a href=""><div class="shoveToRight orange">View All ></div></a>
@@ -113,68 +120,68 @@
 		<footer><h5>&#169; Copyright Karmik 2014. All Rights Reserved.</h5></footer>
 		<div class="achBox" style="display: none;">
 			<div class="acheivement">
-			    <%= image_tag 'break-the-ice.png', class: 'achBadge' %>
-			    <div class="achBody">
-			    	<h2>Achievement Unlocked</h2>
-			    	<h1>Break the Ice</h1>
-			    </div>
+				<%= image_tag 'break-the-ice.png', class: 'achBadge' %>
+				<div class="achBody">
+					<h2>Achievement Unlocked</h2>
+					<h1>Break the Ice</h1>
+				</div>
 			</div>
 		</div>
 		<script type="text/javascript">
-			$( document ).ready(function() {
-				$('.postButton').click(function(){
-				    $(this).html('Sent!');
-				    $('.achBox').slideDown(1000);
-				    $('.achBox').delay(5000).slideUp(1000);
-				});
+		$( document ).ready(function() {
+			$('.postButton').click(function(){
+				$(this).html('Sent!');
+				$('.achBox').slideDown(1000);
+				$('.achBox').delay(5000).slideUp(1000);
 			});
+		});
 		</script>
 	</body>
-</html>
+	</html>
 
-<!--<h1>Profile</h1>
-<br>
-<h2>About</h2>
+	<!--<h1>Profile</h1>
+	<br>
+	<h2>About</h2>
 
-<%= @user.name %>
-<br>
-<%= @user.email %>
-<br>
+	<%= @user.name %>
+	<br>
+	<%= @user.email %>
+	<br>
 
-<% unless @user.city.nil? %>
-<%= @user.city %> <br>
-<% end %>
-<% unless @user.state.nil? %>
-<%= @user.state %> <br>
-<% end %>
-<br>
-<% unless @user.website.nil? %>
-<%= @user.website %> <br>
-<% end %>
+	<% unless @user.city.nil? %>
+	<%= @user.city %> <br>
+	<% end %>
+	<% unless @user.state.nil? %>
+	<%= @user.state %> <br>
+	<% end %>
+	<br>
+	<% unless @user.website.nil? %>
+	<%= @user.website %> <br>
+	<% end %>
 
-<% unless @user.twitter.nil? %>
-<%= @user.twitter %> <br>
-<% end %>
+	<% unless @user.twitter.nil? %>
+	<%= @user.twitter %> <br>
+	<% end %>
 
-<% unless @user.facebook.nil? %>
-<%= @user.facebook %> <br>
-<% end %>
-<% unless @user.phone.nil? %>
-<%= @user.phone %> <br>
-<% end %>
-<br>
-<h2>Needs</h2>
-<br>
-<h2>Service</h2>
-<br>
-<h2>Reviews</h2>
-<% unless @user.updated_at.nil? %>
-<%= @user.updated_at %> <br>
-<% end %>
+	<% unless @user.facebook.nil? %>
+	<%= @user.facebook %> <br>
+	<% end %>
+	<% unless @user.phone.nil? %>
+	<%= @user.phone %> <br>
+	<% end %>
+	<br>
+	<h2>Needs</h2>
+	<br>
+	<h2>Service</h2>
+	<br>
+	<h2>Reviews</h2>
+	<% unless @user.updated_at.nil? %>
+	<%= @user.updated_at %> <br>
+	<% end %>
 
-<% unless @user.role.nil? %>
-<%= @user.role%> <br>
-<% end %>
-<% @user.reviews.each do |review| %>
-  <%= review.feedback %>
-<% end %>-->
+	<% unless @user.role.nil? %>
+	<%= @user.role%> <br>
+	<% end %>
+	<% @user.reviews.each do |review| %>
+	<%= review.feedback %>
+	<% end %>-->
